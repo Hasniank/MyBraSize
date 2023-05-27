@@ -106,8 +106,6 @@ export const BraScreen = () => {
         console.log(ukSize);
         setDifference(ukSize);
       }
-      // let ukSize = bustSize - bandSize;
-      // console.log(ukSize);
 
       if (difference < 1) {
         setBraSize('AA');
@@ -135,6 +133,8 @@ export const BraScreen = () => {
         setBraSize('K');
       } else if (difference === 12) {
         setBraSize('L');
+      } else if (difference > 12) {
+        setCalBraSize('This Size Are Not in list');
       }
     }
 
@@ -147,7 +147,6 @@ export const BraScreen = () => {
         let diff = bustSize - bandSize;
         setDifference(diff);
       }
-
       if (difference <= 5) {
         setBraSize('A');
         console.log('A');
@@ -177,6 +176,8 @@ export const BraScreen = () => {
         console.log('J');
       } else if (difference <= 14) {
         setBraSize('J');
+      } else if (difference > 14) {
+        setCalBraSize('This Size Are Not in list');
       }
     }
 
@@ -234,7 +235,7 @@ export const BraScreen = () => {
       } else if (difference === 7) {
         setBraSize('DDDD(G)');
       } else if (difference > 7) {
-        setBraSize('This Size Are Not in list');
+        setCalBraSize('This Size Are Not in list');
       }
     }
     if (region === 'AUS/NZ') {
@@ -296,6 +297,8 @@ export const BraScreen = () => {
       }
       if (difference <= 17) {
         setBraSize('KK');
+      } else if (difference > 17) {
+        setCalBraSize('This Size Are Not in list');
       }
     }
     if (region === 'KOR/CHN') {
@@ -327,6 +330,9 @@ export const BraScreen = () => {
         setBraSize('H');
       } else if (difference <= 9) {
         setBraSize('H');
+      } else if (difference > 9) {
+        // setBraSize('This Size Are Not in list');
+        setCalBraSize('This Size Are Not in list');
       }
     }
 
@@ -377,114 +383,111 @@ export const BraScreen = () => {
         source={IMAGE.IMAGES.BG}
         style={Styles().backgroundImage}
         resizeMode="cover">
-        <KeyboardAvoidingView behavior="padding" enabled>
-          <ScrollView keyboardShouldPersistTaps="handled">
-            <View style={Styles().header}>
-              <Header
-                title={'Select Region'}
-                Subtitle={selectedOption}
-                onPress={toggleModal}
-                width={SCREENS.screenWidth * 0.9}
-                height={SCREENS.screenHeight * 0.07}
-              />
+        {/* <KeyboardAvoidingView behavior="padding" enabled>
+          <ScrollView keyboardShouldPersistTaps="handled"> */}
+        <View style={Styles().header}>
+          <Header
+            title={'Select Region'}
+            Subtitle={selectedOption}
+            onPress={toggleModal}
+            width={SCREENS.screenWidth * 0.9}
+            height={SCREENS.screenHeight * 0.07}
+          />
+        </View>
+        <Modal
+          isVisible={isModalVisible}
+          style={Styles().modal}
+          swipeDirection={'up'}
+          animationIn={'fadeIn'}>
+          <BlurView blurType="light" style={Styles().BlurView}>
+            <View style={Styles().modalContainer}>
+              <View style={Styles().modalInnerContainer}>
+                <Text style={Styles().selectRegion}>Select Region</Text>
+                <TouchableOpacity
+                  style={Styles().radioBtn}
+                  onPress={toggleModal}>
+                  <RadioButton
+                    options={options}
+                    selectedOption={selectedOption}
+                    onSelect={handleSelect}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
-            <Modal
-              isVisible={isModalVisible}
-              style={Styles().modal}
-              swipeDirection={'up'}
-              animationIn={'fadeIn'}>
-              <BlurView blurType="light" style={Styles().BlurView}>
-                <View style={Styles().modalContainer}>
-                  <View style={Styles().modalInnerContainer}>
-                    <Text style={Styles().selectRegion}>Select Region</Text>
-                    <TouchableOpacity
-                      style={Styles().radioBtn}
-                      onPress={toggleModal}>
-                      <RadioButton
-                        options={options}
-                        selectedOption={selectedOption}
-                        onSelect={handleSelect}
-                      />
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </BlurView>
-            </Modal>
-            <View style={Styles().secondContainer}>
-              <BraCom
-                title={'Bust Size (Inches)'}
-                width={SCREENS.screenWidth * 0.58}
-                subTitle={
-                  'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
-                }
-                source={IMAGE.IMAGES.Bust}
-              />
+          </BlurView>
+        </Modal>
+        <View style={Styles().secondContainer}>
+          <BraCom
+            title={'Bust Size (Inches)'}
+            width={SCREENS.screenWidth * 0.57}
+            subTitle={
+              'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
+            }
+            source={IMAGE.IMAGES.Bust}
+          />
 
-              <Input
-                borderWidth={1}
-                width={SCREENS.screenWidth * 0.58}
-                onChangeText={handleChangeText}
-                marginTop={10}
-                backgroundColor={'#FFB0F6'}
-                color={'#ffff'}
-                borderColor={'#FCC8D1'}
-                height={SCREENS.screenHeight * 0.04}
-                marginRight={10}
-                marginLeft={35}
-                value={bustSize}
-                fontSize={16}
-                paddingBottom={5}
-              />
-              {bustError ? (
-                <Text style={{color: 'red'}}>{bustError}</Text>
-              ) : null}
-              <BraCom
-                title={'Band Size (Inches)'}
-                subTitle={
-                  'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
-                }
-                source={IMAGE.IMAGES.Band}
-                width={225}
-                marginTop={-8}
-              />
-              <Input
-                borderWidth={1}
-                width={SCREENS.screenWidth * 0.56}
-                onChangeText={handleChangeText1}
-                marginLeft={25}
-                backgroundColor={'#FFB0F6'}
-                color={'#ffff'}
-                borderColor={'#FCC8D1'}
-                height={SCREENS.screenHeight * 0.04}
-                marginRight={10}
-                value={bandSize}
-                fontSize={16}
-                marginTop={-10}
-                paddingBottom={5}
-              />
-              {bandError ? (
-                <Text style={{color: 'red'}}>{bandError}</Text>
-              ) : null}
-              <Button
-                title={'Calculate'}
-                width={130}
-                borderWidth={1}
-                marginTop={90}
-                height={35}
-                borderRadius={10}
-                backgroundColor={'#F49CE9'}
-                onPress={Calculate}
-                borderColor={'#fff'}
-                color={'#FFF'}
-              />
-              {calBraSize !== '' && (
-                <Text style={Styles().braSize}>
-                  Your Bra Size : {calBraSize}
-                </Text>
-              )}
-            </View>
-          </ScrollView>
-        </KeyboardAvoidingView>
+          <Input
+            borderWidth={1}
+            width={SCREENS.screenWidth * 0.54}
+            onChangeText={handleChangeText}
+            marginTop={10}
+            backgroundColor={'#FFB0F6'}
+            color={'#ffff'}
+            borderColor={'#FCC8D1'}
+            height={37}
+            // marginRight={10}
+            // marginLeft={35}
+            value={bustSize}
+            fontSize={16}
+            // paddingBottom={5}
+            
+          />
+          {bustError ? <Text style={{color: 'red'}}>{bustError}</Text> : null}
+          <BraCom
+            title={'Band Size (Inches)'}
+            subTitle={
+              'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
+            }
+            source={IMAGE.IMAGES.Band}
+            // width={225}
+            marginTop={-8}
+            // top={10}
+          />
+          <Input
+            borderWidth={1}
+            width={SCREENS.screenWidth * 0.52}
+            onChangeText={handleChangeText1}
+            // marginLeft={25}
+            backgroundColor={'#FFB0F6'}
+            color={'#ffff'}
+            borderColor={'#FCC8D1'}
+            height={37}
+            // marginRight={10}
+            value={bandSize}
+            fontSize={16}
+            marginTop={-10}
+            // paddingBottom={5}
+          />
+          {bandError ? <Text style={{color: 'red'}}>{bandError}</Text> : null}
+          <Button
+            title={'Calculate'}
+            width={SCREENS.screenWidth * 0.25}
+            borderWidth={1}
+            // marginTop={90}
+            height={35}
+            borderRadius={10}
+            backgroundColor={'#F49CE9'}
+            onPress={Calculate}
+            borderColor={'#fff'}
+            color={'#FFF'}
+            top={83}
+          />
+          {calBraSize !== '' && (
+            <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
+          )}
+        </View>
+        {/* </ScrollView>
+        </KeyboardAvoidingView> */}
 
         <View style={Styles().thirdContainer}>
           <View>

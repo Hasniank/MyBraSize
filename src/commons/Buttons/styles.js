@@ -9,7 +9,8 @@ export const Styles = ({
   borderWidth,
   marginTop,
   borderRadius,
-  borderColor
+  borderColor,
+  top
 } = {}) =>
   StyleSheet.create({
     container: {
@@ -22,7 +23,8 @@ export const Styles = ({
       alignItems:'center',
       borderRadius:borderRadius,
       borderColor:borderColor,
-      color:color
+      color:color,
+     top:top,
     },
     text: {
       fontSize: fontSize,
