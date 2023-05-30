@@ -5,7 +5,6 @@ export const styles = ({width, height} = {}) =>
     container: {
       justifyContent: 'space-between',
       alignItems: 'center',
-      // borderWidth: 1,
       flexDirection: 'row',
       height: height,
       width: width,
@@ -13,9 +12,6 @@ export const styles = ({width, height} = {}) =>
       elevation: 10,
       borderRadius: 8,
       backgroundColor: '#FCA1F1',
-      // borderTopColor: '#fff',
-      marginTop: 40,
-      // flex: 0.2,
     },
     selectRegionText: {
       fontSize: 20,

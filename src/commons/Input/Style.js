@@ -5,13 +5,11 @@ export const Styles = ({
   height,
   backgroundColor,
   borderWidth,
-  marginTop,
-  marginLeft,
   color,
   borderColor,
-  marginRight,
   fontSize,
-  paddingBottom,
+  top,
+  left
 } = {}) =>
   StyleSheet.create({
     container: {
@@ -19,15 +17,11 @@ export const Styles = ({
       height: height,
       backgroundColor: backgroundColor,
       borderWidth: borderWidth,
-      marginTop: marginTop,
-      marginLeft: marginLeft,
       borderRadius: 9,
       color: color,
-      paddingLeft: 10,
       fontSize: fontSize,
       borderColor: borderColor,
-      marginRight: marginRight,
-      paddingBottom: paddingBottom,
-      left:0
+      top: top,
+      left: left,
     },
   });

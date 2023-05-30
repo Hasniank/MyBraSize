@@ -1,14 +1,17 @@
 import {StyleSheet} from 'react-native';
-import { SCREENS } from '../../../../../constants';
+import {SCREENS} from '../../../../../constants';
 
-export const Styles = ({width, marginTop, marginVertical, height} = {}) =>
+export const Styles = ({width, height, top, left,right} = {}) =>
   StyleSheet.create({
     container: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: marginTop,
-      marginRight: 50,
+      justifyContent: 'space-between',
+      width: SCREENS.screenWidth * 0.8,
+      // height: SCREENS.screenHeight * 0.3,
+      top: top,
+      left: left,
+      right:right,
     },
     bustText: {
       fontSize: 18,
@@ -23,14 +26,14 @@ export const Styles = ({width, marginTop, marginVertical, height} = {}) =>
       height: height,
       marginTop: 5,
     },
-    imageContainer: {
-      marginTop: 50,
-      marginRight: 20,
-      marginLeft: 10,
+    imageContainer: {},
+    image: {
+      // top: 10,
+      // right: 15,
     },
     TextContainer: {
-      width: 238,
-      lineHeight: 20,
-      height: 85,
+      // width: 238,
+      // lineHeight: 20,
+      // height: 85,
     },
   });

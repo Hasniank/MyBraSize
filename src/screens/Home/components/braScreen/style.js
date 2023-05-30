@@ -6,6 +6,7 @@ export const Styles = () =>
       flex: 1,
       width: SCREENS.screenWidth * 1,
       height: SCREENS.screenHeight * 1,
+      flexDirection: 'column',
     },
     backgroundImage: {
       width: SCREENS.screenWidth * 1,
@@ -16,8 +17,7 @@ export const Styles = () =>
       alignItems: 'center',
       alignSelf: 'center',
       flex: 0.1,
-      top: 30,
-      // marginTop: 60,
+      top: 10,
     },
     modal: {
       width: SCREENS.screenWidth * 1,
@@ -58,28 +58,23 @@ export const Styles = () =>
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
-      // marginTop: 30,
-      flex: 0.5,
-      // top: 25,
+      flex: 0.3,
     },
 
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
       top: 85,
-      // marginTop: 10,
     },
     thirdContainer: {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      // marginTop: 190,
+
       flex: 0.4,
       top: 70,
     },
-    LightImage: {
-      // marginLeft: 15,
-    },
+    LightImage: {},
     hintText: {
       fontSize: 16,
       fontWeight: 'bold',

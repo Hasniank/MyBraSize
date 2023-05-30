@@ -7,18 +7,16 @@ export const Input = ({
   placeholder,
   value,
   width,
-  height,
   backgroundColor,
   borderWidth,
-  marginTop,
-  marginLeft,
   color,
   borderColor,
   onFocus,
   onBlur,
-  marginRight,
   fontSize,
-  paddingBottom,
+  height,
+  top,
+  left
 }) => {
   return (
     <TextInput
@@ -35,13 +33,11 @@ export const Input = ({
           height,
           backgroundColor,
           borderWidth,
-          marginTop,
-          marginLeft,
           color,
           borderColor,
-          marginRight,
           fontSize,
-          paddingBottom,
+          top,
+          left
         }).container
       }
     />
