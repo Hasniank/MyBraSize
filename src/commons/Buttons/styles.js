@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {FONTS} from '../../constants';
 
 export const Styles = ({
   width,
@@ -10,24 +11,25 @@ export const Styles = ({
   marginTop,
   borderRadius,
   borderColor,
-  top
+  top,
 } = {}) =>
   StyleSheet.create({
     container: {
       width: width,
       height: height,
       backgroundColor: backgroundColor,
-      borderWidth:borderWidth,
-      marginTop:marginTop,
-      justifyContent:"center",
-      alignItems:'center',
-      borderRadius:borderRadius,
-      borderColor:borderColor,
-      color:color,
-     top:top,
+      borderWidth: borderWidth,
+      marginTop: marginTop,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: borderRadius,
+      borderColor: borderColor,
+      color: color,
+      top: top,
     },
     text: {
       fontSize: fontSize,
       color: color,
+      fontFamily: FONTS.SALSA,
     },
   });

@@ -9,7 +9,8 @@ export const Styles = ({
   borderColor,
   fontSize,
   top,
-  left
+  left,
+  right
 } = {}) =>
   StyleSheet.create({
     container: {
@@ -23,5 +24,6 @@ export const Styles = ({
       borderColor: borderColor,
       top: top,
       left: left,
+      right:right,
     },
   });

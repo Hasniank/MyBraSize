@@ -11,9 +11,10 @@ export const BraCom = ({
   top,
   left,
   right,
+  marginRight
 }) => {
   return (
-    <View style={Styles({top, left, right}).container}>
+    <View style={Styles({top, left, right, marginRight}).container}>
       {/* <View style={Styles().imageContainer}> */}
       <Image source={source} style={Styles().image} />
       {/* </View> */}
@@ -27,3 +28,5 @@ export const BraCom = ({
     </View>
   );
 };
+
+// react-native.config.js

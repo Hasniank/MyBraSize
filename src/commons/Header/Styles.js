@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {FONTS} from '../../constants';
 
 export const styles = ({width, height} = {}) =>
   StyleSheet.create({
@@ -18,12 +19,13 @@ export const styles = ({width, height} = {}) =>
       fontWeight: 'bold',
       color: '#FFFFFF',
       marginLeft: 10,
+      fontFamily: FONTS.SALSA,
     },
     regionText: {
       fontSize: 20,
       fontWeight: 'bold',
       color: '#FFFFFF',
       marginRight: 10,
+      fontFamily: FONTS.SALSA,
     },
   });
-

@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {FONTS} from '../../constants';
+import {IMAGE} from '../../assets';
 
 export const RadioButton = ({options, selectedOption, onSelect}) => {
   console.log(selectedOption, 'region');
 
   return (
     <View>
-      {options.map((option, index) => {
+      {options.map(option => {
         return (
           <TouchableOpacity key={option} onPress={() => onSelect(option)}>
             <View
@@ -24,27 +26,32 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
                 // elevation: 10,
               }}>
               {selectedOption === option ? (
-                <View
-                  style={{
-                    width: 20,
-                    height: 20,
-                    borderRadius: 10,
-                    backgroundColor: '#7A0459',
-                    marginLeft: 10,
-                    marginTop: 10,
-                  }}
+                // <View
+                //   style={{
+                //     width: 20,
+                //     height: 20,
+                //     borderRadius: 10,
+                //     backgroundColor: '#7A0459',
+                //     marginLeft: 10,
+                //     marginTop: 10,
+                //   }}
+                // />
+                <Image
+                  source={IMAGE.IMAGES.CIRCLE2}
+                  style={{left: 8, top: 8}}
                 />
               ) : (
-                <View
-                  style={{
-                    width: 20,
-                    height: 20,
-                    borderRadius: 10,
-                    backgroundColor: '#fff',
-                    marginLeft: 10,
-                    marginTop: 10,
-                  }}
-                />
+                // <View
+                //   style={{
+                //     width: 20,
+                //     height: 20,
+                //     borderRadius: 10,
+                //     backgroundColor: '#fff',
+                //     marginLeft: 10,
+                //     marginTop: 10,
+                //   }}
+                // />
+                <Image source={IMAGE.IMAGES.CIRCLE} style={{left: 8, top: 8}} />
               )}
               <Text
                 style={{
@@ -53,7 +60,7 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
                   textAlign: 'center',
                   marginRight: 20,
                   marginTop: 10,
-                  fontFamily: 'Salsa',
+                  fontFamily: FONTS.Poppins_Italic,
                 }}>
                 {option}
               </Text>

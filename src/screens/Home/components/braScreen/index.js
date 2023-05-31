@@ -378,7 +378,7 @@ export const BraScreen = () => {
   }, [braSize]);
 
   return (
-    <KeyboardAvoidingView  style={{flex: 1}} enabled>
+    <KeyboardAvoidingView style={{flex: 1}} enabled>
       <ScrollView keyboardShouldPersistTaps="handled">
         <ImageBackground
           source={IMAGE.IMAGES.BG}
@@ -387,7 +387,7 @@ export const BraScreen = () => {
           <View
             style={{
               flex: 1,
-              top: 30,
+              top: 25,
               alignItems: 'center',
             }}>
             <Header
@@ -428,9 +428,8 @@ export const BraScreen = () => {
                 'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
               }
               source={IMAGE.IMAGES.Bust}
-              left={0}
               right={20}
-              top={20}
+              top={25}
             />
             <Input
               borderWidth={1}
@@ -442,8 +441,9 @@ export const BraScreen = () => {
               value={bustSize}
               fontSize={16}
               width={SCREENS.screenWidth * 0.6}
-              left={35}
-              top={20}
+              left={15}
+              top={30}
+              // right={30}
             />
             {bustError ? (
               <Text style={{color: 'red', top: 25}}>{bustError}</Text>
@@ -455,7 +455,8 @@ export const BraScreen = () => {
               }
               source={IMAGE.IMAGES.Band}
               width={SCREENS.screenWidth * 0.57}
-              top={35}
+              top={45}
+              right={20}
             />
             <Input
               borderWidth={1}
@@ -467,30 +468,30 @@ export const BraScreen = () => {
               height={SCREENS.screenHeight * 0.05}
               value={bandSize}
               fontSize={16}
-              left={35}
-              top={40}
+              left={15}
+              top={50}
             />
             {bandError ? (
               <Text style={{color: 'red', top: 40}}>{bandError}</Text>
             ) : null}
             <Button
               title={'Calculate'}
-              width={SCREENS.screenWidth * 0.25}
+              width={SCREENS.screenWidth * 0.28}
               borderWidth={1}
-              height={35}
+              height={SCREENS.screenHeight * 0.05}
               borderRadius={10}
               backgroundColor={'#F49CE9'}
               onPress={Calculate}
               borderColor={'#fff'}
               color={'#FFF'}
-              top={120}
+              top={110}
             />
             {calBraSize !== '' && (
               <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
             )}
           </View>
           <View style={{flex: 3}}>
-            <View style={{flexDirection: 'row', top: 150}}>
+            <View style={{flexDirection: 'row', top: 160}}>
               <View>
                 <Image
                   style={Styles().LightImage}

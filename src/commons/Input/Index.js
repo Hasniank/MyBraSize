@@ -16,7 +16,8 @@ export const Input = ({
   fontSize,
   height,
   top,
-  left
+  left,
+  right
 }) => {
   return (
     <TextInput
@@ -37,7 +38,8 @@ export const Input = ({
           borderColor,
           fontSize,
           top,
-          left
+          left,
+          right
         }).container
       }
     />

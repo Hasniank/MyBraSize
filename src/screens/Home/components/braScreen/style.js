@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {SCREENS} from '../../../../constants';
+import {FONTS} from '../../../../constants';
 export const Styles = () =>
   StyleSheet.create({
     container: {
@@ -43,12 +44,13 @@ export const Styles = () =>
       fontSize: 22,
       color: 'white',
       marginRight: 145,
+      fontFamily: FONTS.SALSA,
     },
     modalInnerContainer: {
-      width: '90%',
+      width: SCREENS.screenWidth * 0.9,
       justifyContent: 'center',
       alignItems: 'center',
-      height: SCREENS.screenHeight * 0.6,
+      height: SCREENS.screenHeight * 0.5,
       borderRadius: 25,
       backgroundColor: '#E2A2DA',
       elevation: 10,
@@ -70,16 +72,20 @@ export const Styles = () =>
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-
       flex: 0.4,
       top: 70,
     },
-    LightImage: {},
+    LightImage: {
+      left: 10,
+      top: 5,
+    },
     hintText: {
       fontSize: 16,
       fontWeight: 'bold',
       color: '#FFFFFF',
-      width: 360,
-      marginLeft: 10,
+      width: SCREENS.screenWidth * 0.9,
+      height: SCREENS.screenHeight * 0.05,
+      fontFamily: FONTS.SALSA,
+      left: 18,
     },
   });
