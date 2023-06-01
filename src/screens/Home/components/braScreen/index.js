@@ -29,7 +29,6 @@ export const BraScreen = () => {
   const [bandError, setBandError] = useState('');
   const [selectedOption, setSelectedOption] = useState('UK');
   const [calBraSize, setCalBraSize] = useState('');
-  const [difference, setDifference] = useState();
 
   const options = [
     'ESP/FR/PR',
@@ -99,41 +98,35 @@ export const BraScreen = () => {
 
     if (region === 'UK') {
       console.log('hi');
-      if (bandSize > bustSize) {
-        setBandError('bustSize Must be greater Than bandSize');
-      } else {
-        let ukSize = bustSize - bandSize;
-        console.log(ukSize);
-        setDifference(ukSize);
-      }
-
-      if (difference < 1) {
+      let ukSize = bustSize - bandSize;
+      console.log(ukSize);
+      if (ukSize < 1) {
         setBraSize('AA');
-      } else if (difference === 1) {
+      } else if (ukSize === 1) {
         setBraSize('A');
-      } else if (difference === 2) {
+      } else if (ukSize === 2) {
         setBraSize(' B');
-      } else if (difference === 3) {
+      } else if (ukSize === 3) {
         setBraSize('C');
-      } else if (difference === 4) {
+      } else if (ukSize === 4) {
         setBraSize('D');
-      } else if (difference === 5) {
+      } else if (ukSize === 5) {
         setBraSize('DD/E');
-      } else if (difference === 6) {
+      } else if (ukSize === 6) {
         setBraSize('DDD/F');
-      } else if (difference === 7) {
+      } else if (ukSize === 7) {
         setBraSize('G');
-      } else if (difference === 8) {
+      } else if (ukSize === 8) {
         setBraSize('H');
-      } else if (difference === 9) {
+      } else if (ukSize === 9) {
         setBraSize('I');
-      } else if (difference === 10) {
+      } else if (ukSize === 10) {
         setBraSize('J');
-      } else if (difference === 11) {
+      } else if (ukSize === 11) {
         setBraSize('K');
-      } else if (difference === 12) {
+      } else if (ukSize === 12) {
         setBraSize('L');
-      } else if (difference > 12) {
+      } else if (ukSize > 12) {
         setCalBraSize('This Size Are Not in list');
       }
     }
@@ -141,42 +134,39 @@ export const BraScreen = () => {
     if (region === 'ESP/FR/PR') {
       setBandError('');
       setBustError('');
-      if (bandSize > bustSize) {
-        setBandError('bustSize Must be greater Than bandSize');
-      } else {
-        let diff = bustSize - bandSize;
-        setDifference(diff);
-      }
-      if (difference <= 5) {
+
+      let diff = bustSize - bandSize;
+
+      if (diff <= 5) {
         setBraSize('A');
         console.log('A');
-      } else if (difference <= 6) {
+      } else if (diff <= 6) {
         setBraSize('B');
         console.log('B');
-      } else if (difference <= 7) {
+      } else if (diff <= 7) {
         setBraSize('C');
         console.log('C');
-      } else if (difference <= 8) {
+      } else if (diff <= 8) {
         setBraSize('E');
         console.log('E');
-      } else if (difference <= 9) {
+      } else if (diff <= 9) {
         setBraSize('F');
         console.log('F');
-      } else if (difference <= 10) {
+      } else if (diff <= 10) {
         setBraSize('G');
         console.log('G');
-      } else if (difference <= 11) {
+      } else if (diff <= 11) {
         setBraSize('H');
         console.log('H');
-      } else if (difference <= 12) {
+      } else if (diff <= 12) {
         setBraSize('I');
         console.log('I');
-      } else if (difference <= 13) {
+      } else if (diff <= 13) {
         setBraSize('J');
         console.log('J');
-      } else if (difference <= 14) {
+      } else if (diff <= 14) {
         setBraSize('J');
-      } else if (difference > 14) {
+      } else if (diff > 14) {
         setCalBraSize('This Size Are Not in list');
       }
     }
@@ -212,126 +202,110 @@ export const BraScreen = () => {
     if (region === 'USA/MEX') {
       setBandError('');
       setBustError('');
-      if (bandSize > bustSize) {
-        setBandError('bustSize Must be greater Than bandSize');
-      } else {
-        let usSize = bustSize - bandSize;
-        setDifference(usSize);
-      }
-      if (difference === 0) {
+      let usSize = bustSize - bandSize;
+      if (usSize === 0) {
         setBraSize('AA');
-      } else if (difference === 1) {
+      } else if (usSize === 1) {
         setBraSize('A');
-      } else if (difference === 2) {
+      } else if (usSize === 2) {
         setBraSize('B');
-      } else if (difference === 3) {
+      } else if (usSize === 3) {
         setBraSize('C');
-      } else if (difference === 4) {
+      } else if (usSize === 4) {
         setBraSize('D');
-      } else if (difference === 5) {
+      } else if (usSize === 5) {
         setBraSize('DD(E)');
-      } else if (difference === 6) {
+      } else if (usSize === 6) {
         setBraSize('DDD(F)');
-      } else if (difference === 7) {
+      } else if (usSize === 7) {
         setBraSize('DDDD(G)');
-      } else if (difference > 7) {
+      } else if (usSize > 7) {
         setCalBraSize('This Size Are Not in list');
       }
     }
     if (region === 'AUS/NZ') {
       setBandError('');
       setBustError('');
-      if (bandSize > bustSize) {
-        setBandError('bustSize Must be greater Than bandSize');
-      } else {
-        let ausNZSizes = bustSize - bandSize;
-        setDifference(ausNZSizes);
-      }
-      if (difference <= 1) {
+      let ausNZSizes = bustSize - bandSize;
+      if (ausNZSizes <= 1) {
         setBraSize('AA');
       }
-      if (difference <= 2) {
+      if (ausNZSizes <= 2) {
         setBraSize('A');
       }
-      if (difference <= 3) {
+      if (ausNZSizes <= 3) {
         setBraSize('B');
       }
-      if (difference <= 4) {
+      if (ausNZSizes <= 4) {
         setBraSize('C');
       }
-      if (difference <= 5) {
+      if (ausNZSizes <= 5) {
         setBraSize('D');
       }
-      if (difference <= 6) {
+      if (ausNZSizes <= 6) {
         setBraSize('DD');
       }
-      if (difference <= 7) {
+      if (ausNZSizes <= 7) {
         setBraSize('E');
       }
-      if (difference <= 8) {
+      if (ausNZSizes <= 8) {
         setBraSize('F');
       }
-      if (difference <= 9) {
+      if (ausNZSizes <= 9) {
         setBraSize('FF');
       }
-      if (difference <= 10) {
+      if (ausNZSizes <= 10) {
         setBraSize('G');
       }
-      if (difference <= 11) {
+      if (ausNZSizes <= 11) {
         setBraSize('GG');
       }
-      if (difference <= 12) {
+      if (ausNZSizes <= 12) {
         setBraSize('H');
       }
-      if (difference <= 13) {
+      if (ausNZSizes <= 13) {
         setBraSize('HH');
       }
-      if (difference <= 14) {
+      if (ausNZSizes <= 14) {
         setBraSize('J');
       }
-      if (difference <= 15) {
+      if (ausNZSizes <= 15) {
         setBraSize('JJ');
       }
-      if (difference <= 16) {
+      if (ausNZSizes <= 16) {
         setBraSize('K');
       }
-      if (difference <= 17) {
+      if (ausNZSizes <= 17) {
         setBraSize('KK');
-      } else if (difference > 17) {
+      } else if (ausNZSizes > 17) {
         setCalBraSize('This Size Are Not in list');
       }
     }
     if (region === 'KOR/CHN') {
       setBandError('');
       setBustError('');
-      if (bandSize > bustSize) {
-        setBandError('bustSize Must be greater Than bandSize');
-      } else {
-        let KorSizes = bustSize - bandSize;
-        setDifference(KorSizes);
-      }
-      if (difference <= 1) {
+      let KorSizes = bustSize - bandSize;
+      if (KorSizes <= 1) {
         setBraSize('A');
-      } else if (difference <= 2) {
+      } else if (KorSizes <= 2) {
         setBraSize('B');
-      } else if (difference <= 3) {
+      } else if (KorSizes <= 3) {
         setBraSize('C');
-      } else if (difference <= 4) {
+      } else if (KorSizes <= 4) {
         setBraSize('D');
-      } else if (difference <= 5) {
+      } else if (KorSizes <= 5) {
         setBraSize('DD/E');
-      } else if (difference <= 6) {
+      } else if (KorSizes <= 6) {
         setBraSize('DDD/F');
-      } else if (difference <= 7) {
+      } else if (KorSizes <= 7) {
         setBraSize('G');
-      } else if (difference <= 8) {
+      } else if (KorSizes <= 8) {
         setBraSize('H');
-      } else if (difference <= 9) {
+      } else if (KorSizes <= 9) {
         setBraSize('H');
-      } else if (difference <= 9) {
+      } else if (KorSizes <= 9) {
         setBraSize('H');
-      } else if (difference > 9) {
-        // setBraSize('This Size Are Not in list');
+      } else if (KorSizes > 9) {
         setCalBraSize('This Size Are Not in list');
       }
     }
@@ -428,11 +402,12 @@ export const BraScreen = () => {
                 'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
               }
               source={IMAGE.IMAGES.Bust}
-              right={13}
+              right={5}
               top={16}
               widthImage={SCREENS.screenWidth * 0.16}
               heightImage={SCREENS.screenHeight * 0.09}
               topImage={15}
+              rightImage={10}
             />
             <Input
               borderWidth={1}
@@ -444,8 +419,8 @@ export const BraScreen = () => {
               value={bustSize}
               fontSize={16}
               width={SCREENS.screenWidth * 0.6}
-              left={22}
-              top={25}
+              left={32}
+              top={22}
             />
             {bustError ? (
               <Text style={{color: 'red', top: 30}}>{bustError}</Text>
@@ -458,10 +433,10 @@ export const BraScreen = () => {
               source={IMAGE.IMAGES.Band}
               width={SCREENS.screenWidth * 0.57}
               top={45}
-              right={15}
-              widthImage={SCREENS.screenWidth*0.15}
-              heightImage={SCREENS.screenHeight*0.09}
+              widthImage={SCREENS.screenWidth * 0.15}
+              heightImage={SCREENS.screenHeight * 0.095}
               topImage={20}
+              rightImage={15}
             />
             <Input
               borderWidth={1}
@@ -473,7 +448,7 @@ export const BraScreen = () => {
               height={SCREENS.screenHeight * 0.05}
               value={bandSize}
               fontSize={16}
-              left={22}
+              left={33}
               top={50}
             />
             {bandError ? (
@@ -489,14 +464,14 @@ export const BraScreen = () => {
               onPress={Calculate}
               borderColor={'#fff'}
               color={'#FFF'}
-              top={110}
+              top={120}
             />
             {calBraSize !== '' && (
               <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
             )}
           </View>
           <View style={{flex: 3}}>
-            <View style={{flexDirection: 'row', top: 160}}>
+            <View style={{flexDirection: 'row', top: 150}}>
               <View>
                 <Image
                   style={Styles().LightImage}
@@ -513,13 +488,3 @@ export const BraScreen = () => {
     </KeyboardAvoidingView>
   );
 };
-
-{
-  /* <KeyboardAvoidingView behavior="padding" enabled>
-        <ScrollView keyboardShouldPersistTaps="handled"> */
-}
-
-{
-  /* </ScrollView>
-      </KeyboardAvoidingView> */
-}

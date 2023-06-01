@@ -66,7 +66,7 @@ export const Styles = () =>
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
-      top: 85,
+      top: 120,
     },
     thirdContainer: {
       flexDirection: 'row',
