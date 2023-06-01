@@ -387,7 +387,7 @@ export const BraScreen = () => {
           <View
             style={{
               flex: 1,
-              top: 25,
+              top: 20,
               alignItems: 'center',
             }}>
             <Header
@@ -428,8 +428,11 @@ export const BraScreen = () => {
                 'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
               }
               source={IMAGE.IMAGES.Bust}
-              right={20}
-              top={25}
+              right={13}
+              top={16}
+              widthImage={SCREENS.screenWidth * 0.16}
+              heightImage={SCREENS.screenHeight * 0.09}
+              topImage={15}
             />
             <Input
               borderWidth={1}
@@ -441,12 +444,11 @@ export const BraScreen = () => {
               value={bustSize}
               fontSize={16}
               width={SCREENS.screenWidth * 0.6}
-              left={15}
-              top={30}
-              // right={30}
+              left={22}
+              top={25}
             />
             {bustError ? (
-              <Text style={{color: 'red', top: 25}}>{bustError}</Text>
+              <Text style={{color: 'red', top: 30}}>{bustError}</Text>
             ) : null}
             <BraCom
               title={'Band Size (Inches)'}
@@ -456,7 +458,10 @@ export const BraScreen = () => {
               source={IMAGE.IMAGES.Band}
               width={SCREENS.screenWidth * 0.57}
               top={45}
-              right={20}
+              right={15}
+              widthImage={SCREENS.screenWidth*0.15}
+              heightImage={SCREENS.screenHeight*0.09}
+              topImage={20}
             />
             <Input
               borderWidth={1}
@@ -468,11 +473,11 @@ export const BraScreen = () => {
               height={SCREENS.screenHeight * 0.05}
               value={bandSize}
               fontSize={16}
-              left={15}
+              left={22}
               top={50}
             />
             {bandError ? (
-              <Text style={{color: 'red', top: 40}}>{bandError}</Text>
+              <Text style={{color: 'red', top: 50}}>{bandError}</Text>
             ) : null}
             <Button
               title={'Calculate'}

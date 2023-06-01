@@ -8,11 +8,11 @@ export const Styles = ({width, height, top, left, right, marginRight} = {}) =>
       alignItems: 'center',
       justifyContent: 'space-between',
       width: SCREENS.screenWidth * 0.8,
-      // height: SCREENS.screenHeight * 0.3,
+      
       top: top,
       left: left,
       right: right,
-     marginRight:marginRight 
+      marginRight: marginRight,
     },
     bustText: {
       fontSize: 18,
@@ -31,12 +31,7 @@ export const Styles = ({width, height, top, left, right, marginRight} = {}) =>
     },
     imageContainer: {},
     image: {
-      // top: 10,
-      // right: 15,
+     top: 25,
     },
-    TextContainer: {
-      // width: 238,
-      // lineHeight: 20,
-      // height: 85,
-    },
+   
   });
