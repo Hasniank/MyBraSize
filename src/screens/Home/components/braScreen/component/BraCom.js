@@ -8,8 +8,6 @@ export const BraCom = ({
   title,
   subTitle,
   source,
-  imageHeight,
-  imageWidth,
   onChangeText,
   placeholder,
   value,
@@ -23,15 +21,15 @@ export const BraCom = ({
   InputTop,
   InputLeft,
   InputHeight,
-  braComTop
+  braComTop,
 }) => {
   return (
     <View style={Styles({braComTop}).container}>
-      <Image source={source} style={Styles({imageHeight, imageWidth}).image} />
-      <View style={{justifyContent: 'center',alignItems:'center',left:6}}>
+      <Image source={source} style={Styles({}).image} />
+      <View style={{justifyContent: 'center', alignItems: 'center', left: 6}}>
         <View style={Styles().textContainer}>
-          <Text style={{color:'#fff'}}>{title}</Text>
-          <Text style={Styles({textHeight, textWidth,textTop}).subTitle}>
+          <Text style={{color: '#fff'}}>{title}</Text>
+          <Text style={Styles({textHeight, textWidth, textTop}).subTitle}>
             {subTitle}
           </Text>
         </View>

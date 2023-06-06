@@ -9,15 +9,11 @@ export const Input = ({
   width,
   backgroundColor,
   borderWidth,
-  color,
   borderColor,
-  onFocus,
-  onBlur,
   fontSize,
   height,
   top,
   left,
-  right,
 }) => {
   return (
     <TextInput
@@ -25,8 +21,6 @@ export const Input = ({
       placeholder={placeholder}
       value={value}
       keyboardType="numeric"
-      onFocus={onFocus}
-      onBlur={onBlur}
       clearButtonMode="always"
       maxLength={2}
       inputMode="numeric"

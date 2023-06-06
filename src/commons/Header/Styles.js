@@ -12,7 +12,9 @@ export const styles = ({width, height} = {}) =>
       position: 'absolute',
       elevation: 10,
       borderRadius: 8,
-      backgroundColor: '#FCA1F1',
+      backgroundColor: '#Fba3d8',
+      borderTopWidth:1,
+      borderTopColor:'#fff'
     },
     selectRegionText: {
       fontSize: 20,

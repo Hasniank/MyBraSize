@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {SCREENS, FONTS} from '../../../../../constants';
 
-export const Styles = ({  textTop,textHeight,textWidth,imageWidth,imageHeight,braComTop} = {}) =>
+export const Styles = ({  textTop,textHeight,textWidth,braComTop} = {}) =>
   StyleSheet.create({
     container: {
       flexDirection: 'row',
@@ -18,8 +18,7 @@ export const Styles = ({  textTop,textHeight,textWidth,imageWidth,imageHeight,br
       color:'#fff'
     },
     image:{
-      height:imageHeight,
-      width:imageWidth,
+    
       justifyContent:'center',
       alignItems:'center',
       alignSelf:'center'

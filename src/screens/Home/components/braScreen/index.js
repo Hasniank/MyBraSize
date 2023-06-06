@@ -393,7 +393,7 @@ export const BraScreen = () => {
               </BlurView>
             </Modal>
           </View>
-          <View style={{flex: 7,}}>
+          <View style={{flex: 7}}>
             <BraCom
               source={IMAGE.IMAGES.Bust}
               title={'Bust Size (Inches)'}
@@ -403,8 +403,6 @@ export const BraScreen = () => {
               onChangeText={handleChangeText}
               value={bustSize}
               borderWidth={1.5}
-              imageWidth={"21%"}
-              imageHeight={"44%"}
               borderColor={bustError ? 'red' : '#fff'}
               textHeight={SCREENS.screenHeight * 0.1}
               textWidth={SCREENS.screenWidth * 0.5}
@@ -413,27 +411,27 @@ export const BraScreen = () => {
               InputTop={3}
               InputLeft={10}
               InputHeight={37}
+              backgroundColor={'#Fdc8E8'}
             />
 
             <BraCom
               source={IMAGE.IMAGES.Band}
-              title={'Bust Size (Inches)'}
+              title={'Band Size (Inches)'}
               subTitle={
                 'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
               }
               onChangeText={handleChangeText1}
               value={bandSize}
               borderWidth={1.5}
-              imageWidth={"21%"}
-              imageHeight={"58%"}
               borderColor={bandError ? 'red' : '#FFFFFF'}
               textWidth={SCREENS.screenWidth * 0.5}
               width={SCREENS.screenWidth * 0.55}
               textTop={5}
               InputLeft={10}
-              InputHeight={SCREENS.screenHeight * 0.05}
+              InputHeight={37}
               braComTop={15}
               InputTop={5}
+              backgroundColor={'#fDC8E8'}
             />
             <Button
               title={'Calculate'}
@@ -441,17 +439,17 @@ export const BraScreen = () => {
               borderWidth={1}
               height={SCREENS.screenHeight * 0.05}
               borderRadius={10}
-              backgroundColor={'#F49CE9'}
+              backgroundColor={'#F1baf4'}
               onPress={Calculate}
               borderColor={'#fff'}
               color={'#FFF'}
               top={'20%'}
-              left={"35%"}
+              left={'35%'}
             />
             {calBraSize !== '' && (
               <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
             )}
-            <View style={{flexDirection: 'row',top:"65%"}}>
+            <View style={{flexDirection: 'row', top: '60%'}}>
               <View>
                 <Image
                   style={Styles().LightImage}

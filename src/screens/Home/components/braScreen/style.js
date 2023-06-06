@@ -52,7 +52,7 @@ export const Styles = () =>
       alignItems: 'center',
       height: SCREENS.screenHeight * 0.53,
       borderRadius: 25,
-      backgroundColor: '#E2A2DA',
+      backgroundColor: '#E4A8CC',
       elevation: 10,
     },
 

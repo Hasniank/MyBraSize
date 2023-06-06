@@ -18,24 +18,15 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
                 width: 280,
                 height: 43,
                 justifyContent: 'center',
-                // alignItems: 'center',
                 borderRadius: 10,
-                backgroundColor: '#F5C6EC',
+                backgroundColor: '##F1D3E5',
                 borderColor: '#dff',
                 flexDirection: 'row',
                 // elevation: 10,
               }}>
               {selectedOption === option ? (
                 // <View
-                //   style={{
-                //     width: 20,
-                //     height: 20,
-                //     borderRadius: 10,
-                //     backgroundColor: '#7A0459',
-                //     marginLeft: 10,
-                //     marginTop: 10,
-                //   }}
-                // />
+              
                 <Image
                   source={IMAGE.IMAGES.CIRCLE2}
                   style={{left: 8, top: 8}}
