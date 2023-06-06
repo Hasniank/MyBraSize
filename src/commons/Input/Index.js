@@ -17,29 +17,32 @@ export const Input = ({
   height,
   top,
   left,
-  right
+  right,
 }) => {
   return (
     <TextInput
       onChangeText={onChangeText}
       placeholder={placeholder}
       value={value}
-      keyboardType="number-pad"
+      keyboardType="numeric"
       onFocus={onFocus}
       onBlur={onBlur}
       clearButtonMode="always"
+      maxLength={2}
+      inputMode="numeric"
+      cursorColor={'#fff'}
+      multiline={false}
+      
       style={
         Styles({
           width,
           height,
           backgroundColor,
           borderWidth,
-          color,
           borderColor,
           fontSize,
           top,
           left,
-          right
         }).container
       }
     />

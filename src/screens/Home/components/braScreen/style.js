@@ -66,7 +66,8 @@ export const Styles = () =>
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
-      top: 120,
+      top: "20%",
+      left:'25%'
     },
     thirdContainer: {
       flexDirection: 'row',
@@ -86,6 +87,6 @@ export const Styles = () =>
       width: SCREENS.screenWidth * 0.9,
       height: SCREENS.screenHeight * 0.05,
       fontFamily: FONTS.SALSA,
-      left: 18,
+      left: 15,
     },
   });

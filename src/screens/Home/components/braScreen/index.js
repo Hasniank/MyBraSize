@@ -374,7 +374,6 @@ export const BraScreen = () => {
             <Modal
               isVisible={isModalVisible}
               style={Styles().modal}
-              swipeDirection={'up'}
               animationIn={'fadeIn'}>
               <BlurView blurType="light" style={Styles().BlurView}>
                 <View style={Styles().modalContainer}>
@@ -394,66 +393,48 @@ export const BraScreen = () => {
               </BlurView>
             </Modal>
           </View>
-          <View style={{flex: 5, alignItems: 'center'}}>
+          <View style={{flex: 7,}}>
             <BraCom
+              source={IMAGE.IMAGES.Bust}
               title={'Bust Size (Inches)'}
-              width={SCREENS.screenWidth * 0.57}
               subTitle={
                 'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
               }
-              source={IMAGE.IMAGES.Bust}
-              right={5}
-              top={16}
-              widthImage={SCREENS.screenWidth * 0.16}
-              heightImage={SCREENS.screenHeight * 0.09}
-              topImage={15}
-              rightImage={10}
-            />
-            <Input
-              borderWidth={1}
               onChangeText={handleChangeText}
-              backgroundColor={'#FFB0F6'}
-              color={'#ffff'}
-              borderColor={'#FCC8D1'}
-              height={SCREENS.screenHeight * 0.05}
               value={bustSize}
-              fontSize={16}
-              width={SCREENS.screenWidth * 0.6}
-              left={32}
-              top={22}
+              borderWidth={1.5}
+              imageWidth={"21%"}
+              imageHeight={"44%"}
+              borderColor={bustError ? 'red' : '#fff'}
+              textHeight={SCREENS.screenHeight * 0.1}
+              textWidth={SCREENS.screenWidth * 0.5}
+              width={SCREENS.screenWidth * 0.55}
+              textTop={5}
+              InputTop={3}
+              InputLeft={10}
+              InputHeight={37}
             />
-            {bustError ? (
-              <Text style={{color: 'red', top: 30}}>{bustError}</Text>
-            ) : null}
+
             <BraCom
-              title={'Band Size (Inches)'}
+              source={IMAGE.IMAGES.Band}
+              title={'Bust Size (Inches)'}
               subTitle={
                 'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
               }
-              source={IMAGE.IMAGES.Band}
-              width={SCREENS.screenWidth * 0.57}
-              top={45}
-              widthImage={SCREENS.screenWidth * 0.15}
-              heightImage={SCREENS.screenHeight * 0.095}
-              topImage={20}
-              rightImage={15}
-            />
-            <Input
-              borderWidth={1}
-              width={SCREENS.screenWidth * 0.6}
               onChangeText={handleChangeText1}
-              backgroundColor={'#FFB0F6'}
-              color={'#ffff'}
-              borderColor={'#FCC8D1'}
-              height={SCREENS.screenHeight * 0.05}
               value={bandSize}
-              fontSize={16}
-              left={33}
-              top={50}
+              borderWidth={1.5}
+              imageWidth={"21%"}
+              imageHeight={"58%"}
+              borderColor={bandError ? 'red' : '#FFFFFF'}
+              textWidth={SCREENS.screenWidth * 0.5}
+              width={SCREENS.screenWidth * 0.55}
+              textTop={5}
+              InputLeft={10}
+              InputHeight={SCREENS.screenHeight * 0.05}
+              braComTop={15}
+              InputTop={5}
             />
-            {bandError ? (
-              <Text style={{color: 'red', top: 50}}>{bandError}</Text>
-            ) : null}
             <Button
               title={'Calculate'}
               width={SCREENS.screenWidth * 0.28}
@@ -464,14 +445,13 @@ export const BraScreen = () => {
               onPress={Calculate}
               borderColor={'#fff'}
               color={'#FFF'}
-              top={120}
+              top={'20%'}
+              left={"35%"}
             />
             {calBraSize !== '' && (
               <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
             )}
-          </View>
-          <View style={{flex: 3}}>
-            <View style={{flexDirection: 'row', top: 150}}>
+            <View style={{flexDirection: 'row',top:"65%"}}>
               <View>
                 <Image
                   style={Styles().LightImage}

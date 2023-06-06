@@ -12,6 +12,7 @@ export const Styles = ({
   borderRadius,
   borderColor,
   top,
+  left
 } = {}) =>
   StyleSheet.create({
     container: {
@@ -26,6 +27,7 @@ export const Styles = ({
       borderColor: borderColor,
       color: color,
       top: top,
+      left:left
     },
     text: {
       fontSize: fontSize,

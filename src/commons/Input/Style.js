@@ -5,7 +5,7 @@ export const Styles = ({
   height,
   backgroundColor,
   borderWidth,
-  color,
+
   borderColor,
   fontSize,
   top,
@@ -19,11 +19,12 @@ export const Styles = ({
       backgroundColor: backgroundColor,
       borderWidth: borderWidth,
       borderRadius: 9,
-      color: color,
+      color: "#fff",
       fontSize: fontSize,
       borderColor: borderColor,
       top: top,
       left: left,
       right:right,
+      paddingHorizontal: 10,
     },
   });
