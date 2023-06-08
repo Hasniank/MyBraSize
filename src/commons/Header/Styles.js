@@ -13,21 +13,21 @@ export const styles = ({width, height} = {}) =>
       elevation: 10,
       borderRadius: 8,
       backgroundColor: '#Fba3d8',
-      borderTopWidth:1,
-      borderTopColor:'#fff'
+      borderTopWidth: 1,
+      borderTopColor: '#fff',
     },
     selectRegionText: {
       fontSize: 20,
-      fontWeight: 'bold',
+
       color: '#FFFFFF',
       marginLeft: 10,
-      fontFamily: FONTS.SALSA,
+      fontFamily: 'Salsa-Regular',
     },
     regionText: {
       fontSize: 20,
-      fontWeight: 'bold',
+
       color: '#FFFFFF',
       marginRight: 10,
-      fontFamily: FONTS.SALSA,
+      fontFamily: 'Salsa-Regular',
     },
   });

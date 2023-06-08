@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {FONTS} from '../../constants';
 import {IMAGE} from '../../assets';
 
 export const RadioButton = ({options, selectedOption, onSelect}) => {
@@ -19,29 +18,16 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
                 height: 43,
                 justifyContent: 'center',
                 borderRadius: 10,
-                backgroundColor: '##F1D3E5',
+                backgroundColor: '#F1D3E5',
                 borderColor: '#dff',
                 flexDirection: 'row',
-                // elevation: 10,
               }}>
               {selectedOption === option ? (
-                // <View
-              
                 <Image
                   source={IMAGE.IMAGES.CIRCLE2}
                   style={{left: 8, top: 8}}
                 />
               ) : (
-                // <View
-                //   style={{
-                //     width: 20,
-                //     height: 20,
-                //     borderRadius: 10,
-                //     backgroundColor: '#fff',
-                //     marginLeft: 10,
-                //     marginTop: 10,
-                //   }}
-                // />
                 <Image source={IMAGE.IMAGES.CIRCLE} style={{left: 8, top: 8}} />
               )}
               <Text
@@ -51,7 +37,7 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
                   textAlign: 'center',
                   marginRight: 20,
                   marginTop: 10,
-                  fontFamily: FONTS.Poppins_Italic,
+                  fontFamily: 'Salsa',
                 }}>
                 {option}
               </Text>

@@ -3,6 +3,7 @@ import React from 'react';
 import {Styles} from './Styels';
 import {CustomImage} from '../../../../../commons/CustomImageComponents';
 import {Input} from '../../../../../commons/Input/Index';
+import { FONTS } from '../../../../../constants';
 
 export const BraCom = ({
   title,
@@ -28,7 +29,7 @@ export const BraCom = ({
       <Image source={source} style={Styles({}).image} />
       <View style={{justifyContent: 'center', alignItems: 'center', left: 6}}>
         <View style={Styles().textContainer}>
-          <Text style={{color: '#fff'}}>{title}</Text>
+          <Text style={{color: '#fff',fontFamily:"Salsa-Regular"}}>{title}</Text>
           <Text style={Styles({textHeight, textWidth, textTop}).subTitle}>
             {subTitle}
           </Text>
@@ -44,6 +45,7 @@ export const BraCom = ({
           top={InputTop}
           left={InputLeft}
           height={InputHeight}
+          
         />
       </View>
     </View>

@@ -1,8 +1,10 @@
 import React from 'react';
-import {Home} from './src/screens';
+
+import {SplashScreen} from './src/screens/SplashScreen/SplashScreen';
+import { MyStack } from './src/navigations';
 
 const App = () => {
-  return <Home />;
+  return <MyStack />;
 };
 
 export default App;

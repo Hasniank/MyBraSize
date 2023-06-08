@@ -1,2 +1,2 @@
-export * from './Stack';
+export * from './MyStack';
 export * from './Application';

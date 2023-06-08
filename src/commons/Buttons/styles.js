@@ -12,7 +12,7 @@ export const Styles = ({
   borderRadius,
   borderColor,
   top,
-  left
+  left,
 } = {}) =>
   StyleSheet.create({
     container: {
@@ -27,11 +27,11 @@ export const Styles = ({
       borderColor: borderColor,
       color: color,
       top: top,
-      left:left
+      left: left,
     },
     text: {
       fontSize: fontSize,
       color: color,
-      fontFamily: FONTS.SALSA,
+      fontFamily: 'Salsa-Regular',
     },
   });

@@ -44,7 +44,7 @@ export const Styles = () =>
       fontSize: 22,
       color: 'white',
       marginRight: 145,
-      fontFamily: FONTS.SALSA,
+      fontFamily: 'Salsa-Regular',
     },
     modalInnerContainer: {
       width: SCREENS.screenWidth * 0.9,
@@ -66,8 +66,8 @@ export const Styles = () =>
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
-      top: "20%",
-      left:'25%'
+      top: '20%',
+      left: '25%',
     },
     thirdContainer: {
       flexDirection: 'row',
@@ -82,11 +82,10 @@ export const Styles = () =>
     },
     hintText: {
       fontSize: 16,
-      fontWeight: 'bold',
       color: '#FFFFFF',
       width: SCREENS.screenWidth * 0.9,
       height: SCREENS.screenHeight * 0.05,
-      fontFamily: FONTS.SALSA,
+      fontFamily: 'Salsa-Regular',
       left: 15,
     },
   });
