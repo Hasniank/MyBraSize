@@ -1,11 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {BraScreen} from './components';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 export const Home = () => {
   return (
     <View style={styles.container}>
-      <BraScreen />
+      <SafeAreaProvider>
+        <BraScreen />
+      </SafeAreaProvider>
     </View>
   );
 };
@@ -17,7 +20,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
 
 // <View style={Styles().header}>
 //             <Header
@@ -114,11 +116,13 @@ const styles = StyleSheet.create({
 //             )}
 //           </View>
 
-{/* <View style={Styles().thirdContainer}>
+{
+  /* <View style={Styles().thirdContainer}>
         <View>
           <Image style={Styles().LightImage} source={IMAGE.IMAGES.Light} />
         </View>
         <Text style={Styles().hintText}>
           Hint: Odd numbers will be rounded it to the next even number
         </Text>
-      </View> */}
+      </View> */
+}

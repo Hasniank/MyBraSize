@@ -26,6 +26,8 @@ export const Input = ({
       inputMode="numeric"
       cursorColor={'#fff'}
       multiline={false}
+      keyboardAppearance="default"
+      
       style={
         Styles({
           width,

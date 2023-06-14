@@ -8,7 +8,7 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
       alignItems: 'center',
       justifyContent: 'space-between',
       top: braComTop,
-      width: '70%',
+      width: '67%',
       left: 25,
     },
     subTitle: {
@@ -17,6 +17,7 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
       top: textTop,
       color: '#fff',
       fontFamily: 'Salsa-Regular',
+      fontSize:16
     },
     image: {
       justifyContent: 'center',

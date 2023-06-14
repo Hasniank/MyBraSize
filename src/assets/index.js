@@ -6,6 +6,7 @@ const IMAGES = {
   CIRCLE: require('./Images/Circle.png'),
   CIRCLE2: require('./Images/Circle2.png'),
   SPLASHImage: require('./Images/splash.png'),
+  Header: require("./Images/Header.png"),
 };
 
 export const IMAGE = {

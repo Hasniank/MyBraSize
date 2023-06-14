@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {SCREENS} from '../../../../constants';
-import {FONTS} from '../../../../constants';
+
 export const Styles = () =>
   StyleSheet.create({
     container: {
@@ -66,7 +66,7 @@ export const Styles = () =>
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
-      top: '20%',
+      top: '15%',
       left: '25%',
     },
     thirdContainer: {

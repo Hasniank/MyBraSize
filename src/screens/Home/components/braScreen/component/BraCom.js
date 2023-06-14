@@ -27,9 +27,9 @@ export const BraCom = ({
   return (
     <View style={Styles({braComTop}).container}>
       <Image source={source} style={Styles({}).image} />
-      <View style={{justifyContent: 'center', alignItems: 'center', left: 6}}>
+      <View style={{justifyContent: 'center', alignItems: 'center', left: 8}}>
         <View style={Styles().textContainer}>
-          <Text style={{color: '#fff',fontFamily:"Salsa-Regular"}}>{title}</Text>
+          <Text style={{color: '#fff',fontFamily:"Salsa-Regular",fontSize:20}}>{title}</Text>
           <Text style={Styles({textHeight, textWidth, textTop}).subTitle}>
             {subTitle}
           </Text>
@@ -51,20 +51,3 @@ export const BraCom = ({
     </View>
   );
 };
-
-// react-native.config.js
-
-// <CustomImage
-// source={source}
-// widthImage={widthImage}
-// heightImage={heightImage}
-// topImage={topImage}
-// rightImage={rightImage}
-// />
-// <View>
-// <Text style={Styles({height}).bustText}>{title}</Text>
-// <Text style={Styles({width}).bustText2}>{subTitle}</Text>
-// </View>
-// <View>
-// <View></View>
-// </View>
