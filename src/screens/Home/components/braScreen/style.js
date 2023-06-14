@@ -83,8 +83,8 @@ export const Styles = () =>
     hintText: {
       fontSize: 16,
       color: '#FFFFFF',
-      width: SCREENS.screenWidth * 0.9,
-      height: SCREENS.screenHeight * 0.05,
+      width: "90%",
+      height: "40%",
       fontFamily: 'Salsa-Regular',
       left: 15,
     },
