@@ -134,9 +134,7 @@ export const BraScreen = () => {
     if (region === 'ESP/FR/PR') {
       setBandError('');
       setBustError('');
-
       let diff = bustSize - bandSize;
-
       if (diff <= 5) {
         setBraSize('A');
         console.log('A');
@@ -352,125 +350,239 @@ export const BraScreen = () => {
   }, [braSize]);
 
   return (
-    <SafeAreaView forceInset={{top: 'always'}}>
-      <KeyboardAvoidingView style={{flex: 1}} enabled s>
-        <ScrollView keyboardShouldPersistTaps="handled">
-          <ImageBackground
-            source={IMAGE.IMAGES.BG}
-            style={Styles().container}
-            resizeMode="cover">
-            <View
-              style={{
-                flex: 1,
-                top: 20,
-                alignItems: 'center',
-              }}>
-              <Header
-                title={'Select Region'}
-                Subtitle={selectedOption}
-                onPress={toggleModal}
-                width={SCREENS.screenWidth * 0.9}
-                height={SCREENS.screenHeight * 0.07}
-              />
-              <Modal
-                isVisible={isModalVisible}
-                style={Styles().modal}
-                animationIn={'fadeIn'}
-                animationOut={'slideOutDown'}
-                backdropTransitionOutTiming={0}
-                hideModalContentWhileAnimating>
-                <BlurView blurType="light" style={Styles().BlurView}>
-                  <View style={Styles().modalContainer}>
-                    <View style={Styles().modalInnerContainer}>
-                      <Text style={Styles().selectRegion}>Select Region</Text>
-                      <TouchableOpacity
-                        style={Styles().radioBtn}
-                        onPress={toggleModal}>
-                        <RadioButton
-                          options={options}
-                          selectedOption={selectedOption}
-                          onSelect={handleSelect}
-                        />
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                </BlurView>
-              </Modal>
-            </View>
-            <View style={{flex: 7}}>
-              <BraCom
-                source={IMAGE.IMAGES.Bust}
-                title={'Bust Size (Inches)'}
-                subTitle={
-                  'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
-                }
-                onChangeText={handleChangeText}
-                value={bustSize}
-                borderWidth={1.5}
-                borderColor={bustError ? 'red' : '#fff'}
-                textHeight={SCREENS.screenHeight * 0.11}
-                textWidth={SCREENS.screenWidth * 0.57}
-                width={SCREENS.screenWidth * 0.59}
-                textTop={5}
-                InputTop={1}
-                InputLeft={5}
-                InputHeight={37}
-                backgroundColor={'#Fdc8E8'}
-                braComTop={5}
-              />
+    <SafeAreaView style={{flex: 1}}>
+      <ImageBackground source={IMAGE.IMAGES.BG} style={Styles().container}>
+        <View
+          style={{
+            height: SCREENS.screenHeight * 0.12,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Header
+            title={'Select Region'}
+            Subtitle={selectedOption}
+            onPress={toggleModal}
+            width={SCREENS.screenWidth * 0.93}
+            height={SCREENS.screenHeight * 0.06}
+          />
 
-              <BraCom
-                source={IMAGE.IMAGES.Band}
-                title={'Band Size (Inches)'}
-                subTitle={
-                  'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
-                }
-                onChangeText={handleChangeText1}
-                value={bandSize}
-                borderWidth={1.5}
-                borderColor={bandError ? 'red' : '#FFFFFF'}
-                textWidth={SCREENS.screenWidth * 0.5}
-                width={SCREENS.screenWidth * 0.55}
-                textTop={5}
-                InputLeft={10}
-                InputHeight={37}
-                braComTop={20}
-                InputTop={5}
-                backgroundColor={'#fDC8E8'}
-              />
-              <Button
-                title={'Calculate'}
-                width={SCREENS.screenWidth * 0.28}
-                borderWidth={1}
-                height={SCREENS.screenHeight * 0.05}
-                borderRadius={10}
-                backgroundColor={'#F1baf4'}
-                onPress={Calculate}
-                borderColor={'#fff'}
-                color={'#FFF'}
-                top={'15%'}
-                left={'36%'}
-              />
-              {calBraSize !== '' && (
-                <Text style={Styles().braSize}>
-                  Your Bra Size : {calBraSize}
-                </Text>
-              )}
-              <View style={{flexDirection: 'row', top: '63%',position:"relative"}}>
-                <View>
-                  <Image
-                    style={Styles().LightImage}
-                    source={IMAGE.IMAGES.Light}
-                  />
+          <Modal
+            isVisible={isModalVisible}
+            style={Styles().modal}
+            animationIn={'fadeIn'}
+            animationOut={'slideOutDown'}
+            backdropTransitionOutTiming={0}
+            hideModalContentWhileAnimating>
+            <BlurView blurType="light" style={Styles().BlurView}>
+              <View style={Styles().modalContainer}>
+                <View style={Styles().modalInnerContainer}>
+                  <Text style={Styles().selectRegion}>Select Region</Text>
+                  <TouchableOpacity
+                    style={Styles().radioBtn}
+                    onPress={toggleModal}>
+                    <RadioButton
+                      options={options}
+                      selectedOption={selectedOption}
+                      onSelect={handleSelect}
+                    />
+                  </TouchableOpacity>
                 </View>
-                <Text style={Styles().hintText}>
-                  Hint: Odd numbers will be rounded it to the next even number
-                </Text>
               </View>
+            </BlurView>
+          </Modal>
+        </View>
+        <View
+          style={{
+            height: SCREENS.screenHeight * 0.75,
+          }}>
+          <BraCom
+            source={IMAGE.IMAGES.Bust}
+            title={'Bust Size (Inches)'}
+            subTitle={
+              'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
+            }
+            onChangeText={handleChangeText}
+            left={15}
+            value={bustSize}
+            borderWidth={1.5}
+            borderColor={bustError ? 'red' : '#fff'}
+            textWidth={SCREENS.screenWidth * 0.57}
+            width={SCREENS.screenWidth * 0.59}
+            textTop={5}
+            InputTop={10}
+            InputLeft={7}
+            InputHeight={37}
+            backgroundColor={'#Fdc8E8'}
+          />
+          <BraCom
+            source={IMAGE.IMAGES.Band}
+            title={'Band Size (Inches)'}
+            subTitle={
+              'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
+            }
+            onChangeText={handleChangeText1}
+            value={bandSize}
+            borderWidth={1.5}
+            borderColor={bandError ? 'red' : '#FFFFFF'}
+            textWidth={SCREENS.screenWidth * 0.57}
+            width={SCREENS.screenWidth * 0.55}
+            textTop={5}
+            InputHeight={37}
+            braComTop={20}
+            InputTop={10}
+            backgroundColor={'#fDC8E8'}
+            left={15}
+          />
+          <Button
+            title={'Calculate'}
+            width={SCREENS.screenWidth * 0.29}
+            borderWidth={1}
+            height={SCREENS.screenHeight * 0.05}
+            borderRadius={10}
+            backgroundColor={'#F1baf4'}
+            onPress={Calculate}
+            borderColor={'#fff'}
+            color={'#FFF'}
+            top={125}
+            left={140}
+            fontSize={20}
+          />
+          {calBraSize !== '' && (
+            <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
+          )}
+        </View>
+        <View
+          style={{
+            height: SCREENS.screenHeight * 0.15,
+          }}>
+          <View style={{flexDirection: 'row', top: 30}}>
+            <View>
+              <Image style={Styles().LightImage} source={IMAGE.IMAGES.Light} />
             </View>
-          </ImageBackground>
-        </ScrollView>
-      </KeyboardAvoidingView>
+            <Text style={Styles().hintText}>
+              Hint: Odd numbers will be rounded it to the next even number
+            </Text>
+          </View>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
+
+// <SafeAreaView forceInset={{top: 'always'}}>
+//   <ImageBackground
+//     source={IMAGE.IMAGES.BG}
+//     style={Styles().container}
+//     resizeMode="cover">
+//     <KeyboardAvoidingView style={{flex: 1}} enabled s>
+//       <ScrollView keyboardShouldPersistTaps="handled">
+//         <View
+//           style={{
+//             flex: 1,
+//             top: 20,
+//             alignItems: 'center',
+//           }}>
+//           <Header
+//             title={'Select Region'}
+//             Subtitle={selectedOption}
+//             onPress={toggleModal}
+//             width={SCREENS.screenWidth * 0.9}
+//             height={SCREENS.screenHeight * 0.07}
+//           />
+//           <Modal
+//             isVisible={isModalVisible}
+//             style={Styles().modal}
+//             animationIn={'fadeIn'}
+//             animationOut={'slideOutDown'}
+//             backdropTransitionOutTiming={0}
+//             hideModalContentWhileAnimating>
+//             <BlurView blurType="light" style={Styles().BlurView}>
+//               <View style={Styles().modalContainer}>
+//                 <View style={Styles().modalInnerContainer}>
+//                   <Text style={Styles().selectRegion}>Select Region</Text>
+//                   <TouchableOpacity
+//                     style={Styles().radioBtn}
+//                     onPress={toggleModal}>
+//                     <RadioButton
+//                       options={options}
+//                       selectedOption={selectedOption}
+//                       onSelect={handleSelect}
+//                     />
+//                   </TouchableOpacity>
+//                 </View>
+//               </View>
+//             </BlurView>
+//           </Modal>
+//         </View>
+//         <View style={{flex: 9,top:220}}>
+//           <BraCom
+//             source={IMAGE.IMAGES.Bust}
+//             title={'Bust Size (Inches)'}
+//             subTitle={
+//               'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
+//             }
+//             onChangeText={handleChangeText}
+//             value={bustSize}
+//             borderWidth={1.5}
+//             borderColor={bustError ? 'red' : '#fff'}
+//             textHeight={SCREENS.screenHeight * 0.11}
+//             textWidth={SCREENS.screenWidth * 0.57}
+//             width={SCREENS.screenWidth * 0.59}
+//             textTop={5}
+//             InputTop={1}
+//             InputLeft={5}
+//             InputHeight={37}
+//             backgroundColor={'#Fdc8E8'}
+//             braComTop={5}
+//           />
+
+//           <BraCom
+//             source={IMAGE.IMAGES.Band}
+//             title={'Band Size (Inches)'}
+//             subTitle={
+//               'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
+//             }
+//             onChangeText={handleChangeText1}
+//             value={bandSize}
+//             borderWidth={1.5}
+//             borderColor={bandError ? 'red' : '#FFFFFF'}
+//             textWidth={SCREENS.screenWidth * 0.5}
+//             width={SCREENS.screenWidth * 0.55}
+//             textTop={5}
+//             InputLeft={10}
+//             InputHeight={37}
+//             braComTop={20}
+//             InputTop={5}
+//             backgroundColor={'#fDC8E8'}
+//           />
+//           <Button
+//             title={'Calculate'}
+//             width={SCREENS.screenWidth * 0.28}
+//             borderWidth={1}
+//             height={SCREENS.screenHeight * 0.05}
+//             borderRadius={10}
+//             backgroundColor={'#F1baf4'}
+//             onPress={Calculate}
+//             borderColor={'#fff'}
+//             color={'#FFF'}
+//             top={'15%'}
+//             left={'36%'}
+//           />
+//           {calBraSize !== '' && (
+//             <Text style={Styles().braSize}>
+//               Your Bra Size : {calBraSize}
+//             </Text>
+//           )}
+//         </View>
+//       </ScrollView>
+//     </KeyboardAvoidingView>
+//     <View style={{flexDirection: 'row', flex: 1}}>
+//       <View>
+//         <Image style={Styles().LightImage} source={IMAGE.IMAGES.Light} />
+//       </View>
+//       <Text style={Styles().hintText}>
+//         Hint: Odd numbers will be rounded it to the next even number
+//       </Text>
+//     </View>
+//   </ImageBackground>
+// </SafeAreaView>

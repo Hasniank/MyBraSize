@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {IMAGE} from '../../assets';
+import {SCREENS} from '../../constants';
 
 export const RadioButton = ({options, selectedOption, onSelect}) => {
   console.log(selectedOption, 'region');
@@ -14,7 +15,7 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
               style={{
                 borderWidth: 1,
                 margin: 6,
-                width: 280,
+                width: SCREENS.screenWidth * 0.84,
                 height: 43,
                 justifyContent: 'center',
                 borderRadius: 10,
@@ -25,10 +26,13 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
               {selectedOption === option ? (
                 <Image
                   source={IMAGE.IMAGES.CIRCLE2}
-                  style={{left: 8, top: 8}}
+                  style={{left: 8, top: 8, width: 25, height: 25}}
                 />
               ) : (
-                <Image source={IMAGE.IMAGES.CIRCLE} style={{left: 8, top: 8}} />
+                <Image
+                  source={IMAGE.IMAGES.CIRCLE}
+                  style={{left: 8, top: 8, width: 25, height: 25}}
+                />
               )}
               <Text
                 style={{
@@ -37,7 +41,8 @@ export const RadioButton = ({options, selectedOption, onSelect}) => {
                   textAlign: 'center',
                   marginRight: 20,
                   marginTop: 10,
-                  fontFamily: 'Salsa',
+                  fontFamily: 'Salsa-Regular',
+                  fontSize:20
                 }}>
                 {option}
               </Text>

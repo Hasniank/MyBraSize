@@ -23,11 +23,12 @@ export const BraCom = ({
   InputLeft,
   InputHeight,
   braComTop,
+  left
 }) => {
   return (
     <View style={Styles({braComTop}).container}>
       <Image source={source} style={Styles({}).image} />
-      <View style={{justifyContent: 'center', alignItems: 'center', left: 8}}>
+      <View style={{justifyContent: 'center', alignItems: 'center', left:left}}>
         <View style={Styles().textContainer}>
           <Text style={{color: '#fff',fontFamily:"Salsa-Regular",fontSize:20}}>{title}</Text>
           <Text style={Styles({textHeight, textWidth, textTop}).subTitle}>

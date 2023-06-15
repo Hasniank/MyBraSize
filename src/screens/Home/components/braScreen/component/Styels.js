@@ -17,7 +17,8 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
       top: textTop,
       color: '#fff',
       fontFamily: 'Salsa-Regular',
-      fontSize:16
+      fontSize:16,
+      left:3
     },
     image: {
       justifyContent: 'center',
@@ -25,7 +26,7 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
       alignSelf: 'center',
     },
     textContainer: {
-      padding: 5,
-      justifyContent: 'center',
+     
+     
     },
   });

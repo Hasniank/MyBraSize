@@ -6,14 +6,14 @@ export const styles = ({width, height} = {}) =>
     container: {
       height: height,
       width: width,
-      borderTopWidth: 1.5,
+      borderTopWidth: 1.1,
       borderLeftWidth: 0.9,
       borderRightWidth: 0.9,
       borderBottomWidth: 1,
       borderRadius: 8,
       borderTopColor: '#fff',
-      borderLeftColor: '#fff',
-      borderRightColor: '#fff',
+      borderLeftColor: '#FCA3D8',
+      borderRightColor: '#FCA3D8',
       justifyContent: 'space-between',
       alignItems: 'center',
       flexDirection: 'row',
@@ -26,6 +26,7 @@ export const styles = ({width, height} = {}) =>
       shadowRadius: 9,
       elevation: 10,
       overflow:'hidden',
+      
     },
     selectRegionText: {
       fontSize: 20,

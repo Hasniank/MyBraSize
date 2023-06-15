@@ -33,5 +33,6 @@ export const Styles = ({
       fontSize: fontSize,
       color: color,
       fontFamily: 'Salsa-Regular',
+      
     },
   });

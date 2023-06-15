@@ -4,7 +4,7 @@ import {SCREENS} from '../../../../constants';
 export const Styles = () =>
   StyleSheet.create({
     container: {
-      flex: 1,
+      // flex: 1,
       width: SCREENS.screenWidth * 1,
       height: SCREENS.screenHeight * 1,
       flexDirection: 'column',
@@ -43,17 +43,19 @@ export const Styles = () =>
     selectRegion: {
       fontSize: 22,
       color: 'white',
-      marginRight: 145,
+      right: 100,
       fontFamily: 'Salsa-Regular',
     },
     modalInnerContainer: {
-      width: SCREENS.screenWidth * 0.9,
+      width: SCREENS.screenWidth * 0.95,
       justifyContent: 'center',
       alignItems: 'center',
-      height: SCREENS.screenHeight * 0.53,
+      height: SCREENS.screenHeight * 0.51,
       borderRadius: 25,
       backgroundColor: '#E4A8CC',
       elevation: 10,
+      borderWidth: 1,
+      borderColor: '#fff',
     },
 
     secondContainer: {
@@ -66,7 +68,7 @@ export const Styles = () =>
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
-      top: '15%',
+      top: 115,
       left: '25%',
     },
     thirdContainer: {
@@ -77,14 +79,14 @@ export const Styles = () =>
       top: 70,
     },
     LightImage: {
-      left: 10,
+      left: 5,
       top: 5,
     },
     hintText: {
       fontSize: 16,
       color: '#FFFFFF',
-      width: "90%",
-      height: "40%",
+      width: SCREENS.screenWidth * 0.89,
+      height: SCREENS.screenHeight * 0.6,
       fontFamily: 'Salsa-Regular',
       left: 15,
     },
