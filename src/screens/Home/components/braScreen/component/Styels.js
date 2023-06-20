@@ -6,10 +6,9 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
     container: {
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'space-between',
-      top: braComTop,
-      width: '67%',
-      left: 25,
+      justifyContent: "space-evenly",
+      width:SCREENS.screenWidth*1,
+      margin:10
     },
     subTitle: {
       width: textWidth,

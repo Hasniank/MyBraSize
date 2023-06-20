@@ -23,7 +23,7 @@ export const Styles = ({
       fontSize: fontSize,
       borderColor: borderColor,
       top: top,
-      left: left,
+      left: 5,
       right:right,
       paddingHorizontal: 10,
     },

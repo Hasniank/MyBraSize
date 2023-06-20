@@ -28,25 +28,25 @@ export const BraScreen = () => {
   const [bandError, setBandError] = useState('');
   const [selectedOption, setSelectedOption] = useState('UK');
   const [calBraSize, setCalBraSize] = useState('');
-  const [windowWidth, setWindowWidth] = useState(
-    Dimensions.get('window').width,
-  );
-  const [windowHeight, setWindowHeight] = useState(
-    Dimensions.get('window').height,
-  );
+  // const [windowWidth, setWindowWidth] = useState(
+  //   Dimensions.get('window').width,
+  // );
+  // const [windowHeight, setWindowHeight] = useState(
+  //   Dimensions.get('window').height,
+  // );
 
-  useEffect(() => {
-    const updateDimensions = () => {
-      setWindowWidth(Dimensions.get('window').width);
-      setWindowHeight(Dimensions.get('window').height);
-    };
+  // useEffect(() => {
+  //   const updateDimensions = () => {
+  //     setWindowWidth(Dimensions.get('window').width);
+  //     setWindowHeight(Dimensions.get('window').height);
+  //   };
 
-    Dimensions.addEventListener('change', updateDimensions);
+  //   Dimensions.addEventListener('change', updateDimensions);
 
-    return () => {
-      Dimensions.removeEventListener('change', updateDimensions);
-    };
-  }, []);
+  //   return () => {
+  //     Dimensions.removeEventListener('change', updateDimensions);
+  //   };
+  // }, []);
 
   const options = [
     'ESP/FR/PR',
@@ -375,6 +375,7 @@ export const BraScreen = () => {
             height: SCREENS.screenHeight * 0.12,
             justifyContent: 'center',
             alignItems: 'center',
+            backgroundColor: 'blue',
           }}>
           <Header
             title={'Select Region'}
@@ -383,7 +384,6 @@ export const BraScreen = () => {
             width={SCREENS.screenWidth * 0.93}
             height={SCREENS.screenHeight * 0.06}
           />
-
           <Modal
             isVisible={isModalVisible}
             style={Styles().modal}
@@ -395,15 +395,16 @@ export const BraScreen = () => {
               <View style={Styles().modalContainer}>
                 <View
                   style={{
-                    width: windowWidth * 0.95,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: windowHeight * 0.51,
                     borderRadius: 25,
                     backgroundColor: '#E4A8CC',
                     elevation: 10,
                     borderWidth: 1,
                     borderColor: '#fff',
+                    width:SCREENS.screenWidth*0.95,
+                    alignSelf:'center',
+                    flex:0.52
                   }}>
                   <Text style={Styles().selectRegion}>Select Region</Text>
                   <TouchableOpacity
@@ -423,6 +424,9 @@ export const BraScreen = () => {
         <View
           style={{
             height: SCREENS.screenHeight * 0.75,
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: SCREENS.screenWidth * 1,
           }}>
           <BraCom
             source={IMAGE.IMAGES.Bust}
@@ -431,7 +435,6 @@ export const BraScreen = () => {
               'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
             }
             onChangeText={handleChangeText}
-            left={15}
             value={bustSize}
             borderWidth={1.5}
             borderColor={bustError ? 'red' : '#fff'}
@@ -439,7 +442,6 @@ export const BraScreen = () => {
             width={SCREENS.screenWidth * 0.59}
             textTop={5}
             InputTop={10}
-            InputLeft={7}
             InputHeight={37}
             backgroundColor={'#Fdc8E8'}
           />
@@ -457,10 +459,8 @@ export const BraScreen = () => {
             width={SCREENS.screenWidth * 0.55}
             textTop={5}
             InputHeight={37}
-            braComTop={20}
             InputTop={10}
             backgroundColor={'#fDC8E8'}
-            left={15}
           />
           <Button
             title={'Calculate'}
@@ -472,8 +472,7 @@ export const BraScreen = () => {
             onPress={Calculate}
             borderColor={'#fff'}
             color={'#FFF'}
-            top={"22%"}
-            left={140}
+            
             fontSize={20}
           />
           {calBraSize !== '' && (
@@ -483,6 +482,7 @@ export const BraScreen = () => {
         <View
           style={{
             height: SCREENS.screenHeight * 0.15,
+            width: SCREENS.screenWidth * 1,
           }}>
           <View style={{flexDirection: 'row', top: 30}}>
             <View>
@@ -497,4 +497,3 @@ export const BraScreen = () => {
     </SafeAreaView>
   );
 };
-

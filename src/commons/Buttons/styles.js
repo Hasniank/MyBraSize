@@ -28,11 +28,11 @@ export const Styles = ({
       color: color,
       top: top,
       left: left,
+      marginVertical:100
     },
     text: {
       fontSize: fontSize,
       color: color,
       fontFamily: 'Salsa-Regular',
-      
     },
   });

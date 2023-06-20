@@ -4,10 +4,12 @@ import {SCREENS} from '../../../../constants';
 export const Styles = () =>
   StyleSheet.create({
     container: {
-      // flex: 1,
-      width: SCREENS.screenWidth * 1,
-      height: SCREENS.screenHeight * 1,
+      
+       width: SCREENS.screenWidth * 1,
+       height: SCREENS.screenHeight * 1,
       flexDirection: 'column',
+      justifyContent:'center',
+      alignItems: 'center',
     },
     backgroundImage: {
       width: SCREENS.screenWidth * 1,
@@ -28,8 +30,6 @@ export const Styles = () =>
       marginBottom: 0,
     },
     BlurView: {
-      flex: 1,
-      margin: 0,
       height: SCREENS.screenHeight * 1,
       width: SCREENS.screenWidth * 1,
     },
@@ -37,8 +37,7 @@ export const Styles = () =>
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
-      width: '100%',
-      height: '100%',
+      flex:1
     },
     selectRegion: {
       fontSize: 22,
