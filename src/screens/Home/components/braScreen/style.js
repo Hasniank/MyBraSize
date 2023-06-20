@@ -68,8 +68,9 @@ export const Styles = () =>
     braSize: {
       color: '#FFFFFF',
       fontSize: 20,
-      top: 115,
+      top: '24%',
       left: '25%',
+      fontFamily: 'Salsa-Regular',
     },
     thirdContainer: {
       flexDirection: 'row',
