@@ -370,7 +370,11 @@ export const BraScreen = () => {
           animationIn={'fadeIn'}
           animationOut={'slideOutDown'}
           backdropTransitionOutTiming={0}
-          hideModalContentWhileAnimating>
+          useNativeDriver={false}
+          animationOutTiming={200}
+          animationInTiming={200}
+          useNativeDriverForBackdrop={false}
+          hideModalContentWhileAnimating={true}>
           <BlurView blurType="light" style={Styles().BlurView}>
             <View style={Styles().modalContainer}>
               <View
@@ -380,19 +384,18 @@ export const BraScreen = () => {
                   borderRadius: 25,
                   backgroundColor: '#E4A8CC',
                   elevation: 10,
-                  // borderWidth: 1,
                   borderColor: '#fff',
                   width: SCREENS.screenWidth * 0.95,
                   alignSelf: 'center',
-                  flex: 0.52,
-                  borderTopWidth: 1.1,
-                  borderLeftWidth: 0.9,
-                  borderRightWidth: 0.9,
-                  borderBottomWidth: 1,
-                  borderRightColor: '#FCBDE3',
-                  borderTopColor: '#FCBDE3',
-                  borderBottomColor: '#DAA8DB',
-                  borderLeftColor: '#FCBDE3',
+                  height:SCREENS.screenHeight*0.54
+                  // borderTopWidth: 1.1,
+                  // borderLeftWidth: 0.9,
+                  // borderRightWidth: 0.9,
+                  // borderBottomWidth: 1,
+                  // borderRightColor: '#FCBDE3',
+                  // borderTopColor: '#FCBDE3',
+                  // borderBottomColor: '#DAA8DB',
+                  // borderLeftColor: '#FCBDE3',
                 }}>
                 <Text style={Styles().selectRegion}>Select Region</Text>
                 <TouchableOpacity
@@ -433,7 +436,7 @@ export const BraScreen = () => {
           InputTop={10}
           InputHeight={37}
           backgroundColor={'#Fdc8E8'}
-          braComTop={-18}
+         braComTop={10}
         />
         <BraCom
           source={IMAGE.IMAGES.Band}
