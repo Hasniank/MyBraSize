@@ -1,6 +1,6 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-// import { Styles } from './styles'
+
 import {Styles} from './styles';
 
 export const Button = ({

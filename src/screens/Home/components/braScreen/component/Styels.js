@@ -5,10 +5,10 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
   StyleSheet.create({
     container: {
       flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: "space-evenly",
-      width:SCREENS.screenWidth*1,
-      margin:10
+      // justifyContent: 'space-evenly',
+      width: SCREENS.screenWidth * 1,
+      marginTop: braComTop,
+      marginLeft:30
     },
     subTitle: {
       width: textWidth,
@@ -16,16 +16,13 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
       top: textTop,
       color: '#fff',
       fontFamily: 'Salsa-Regular',
-      fontSize:16,
-      left:3
+      fontSize: 16,
+      left: 3,
     },
     image: {
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
     },
-    textContainer: {
-     
-     
-    },
+    textContainer: {},
   });

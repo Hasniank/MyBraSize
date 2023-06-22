@@ -32,12 +32,15 @@ export const Styles = () =>
     BlurView: {
       height: SCREENS.screenHeight * 1,
       width: SCREENS.screenWidth * 1,
+      justifyContent:'center',
+      alignItems:'center'
     },
     modalContainer: {
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
-      flex:1
+      height: SCREENS.screenHeight * 1,
+      width: SCREENS.screenWidth * 1,
     },
     selectRegion: {
       fontSize: 22,
@@ -53,8 +56,9 @@ export const Styles = () =>
       borderRadius: 25,
       backgroundColor: '#E4A8CC',
       elevation: 10,
-      borderWidth: 1,
-      borderColor: '#fff',
+      // borderWidth: 1,
+      borderColor:'red'
+     
     },
 
     secondContainer: {
