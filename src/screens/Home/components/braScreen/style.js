@@ -4,11 +4,10 @@ import {SCREENS} from '../../../../constants';
 export const Styles = () =>
   StyleSheet.create({
     container: {
-      
-       width: SCREENS.screenWidth * 1,
-       height: SCREENS.screenHeight * 1,
+      width: SCREENS.screenWidth * 1,
+      height: SCREENS.screenHeight * 1,
       flexDirection: 'column',
-      justifyContent:'center',
+      justifyContent: 'center',
       alignItems: 'center',
     },
     backgroundImage: {
@@ -32,8 +31,8 @@ export const Styles = () =>
     BlurView: {
       height: SCREENS.screenHeight * 1,
       width: SCREENS.screenWidth * 1,
-      justifyContent:'center',
-      alignItems:'center'
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     modalContainer: {
       justifyContent: 'center',
@@ -57,8 +56,7 @@ export const Styles = () =>
       backgroundColor: '#E4A8CC',
       elevation: 10,
       // borderWidth: 1,
-      borderColor:'red'
-     
+      borderColor: 'red',
     },
 
     secondContainer: {
@@ -72,7 +70,7 @@ export const Styles = () =>
       color: '#FFFFFF',
       fontSize: 20,
       fontFamily: 'Salsa-Regular',
-      top:95,
+      top: 95,
     },
     thirdContainer: {
       flexDirection: 'row',
