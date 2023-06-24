@@ -114,17 +114,17 @@ export const BraScreen = () => {
       } else if (ukSize === 6) {
         setBraSize('DDD/F');
       } else if (ukSize === 7) {
-        setBraSize('G');
+        setBraSize('DDD/FF');
       } else if (ukSize === 8) {
-        setBraSize('H');
+        setBraSize('G');
       } else if (ukSize === 9) {
-        setBraSize('I');
+        setBraSize('H');
       } else if (ukSize === 10) {
-        setBraSize('J');
+        setBraSize('I');
       } else if (ukSize === 11) {
-        setBraSize('K');
+        setBraSize('J');
       } else if (ukSize === 12) {
-        setBraSize('L');
+        setBraSize('K');
       } else if (ukSize > 12) {
         setCalBraSize('This Size Are Not in list');
       }
@@ -144,23 +144,23 @@ export const BraScreen = () => {
         setBraSize('C');
         console.log('C');
       } else if (diff <= 8) {
+        setBraSize('D');
+        console.log('D');
+      } else if (diff <= 9) {
         setBraSize('E');
         console.log('E');
-      } else if (diff <= 9) {
+      } else if (diff <= 10) {
         setBraSize('F');
         console.log('F');
-      } else if (diff <= 10) {
+      } else if (diff <= 11) {
         setBraSize('G');
         console.log('G');
-      } else if (diff <= 11) {
+      } else if (diff <= 12) {
         setBraSize('H');
         console.log('H');
-      } else if (diff <= 12) {
+      } else if (diff <= 13) {
         setBraSize('I');
         console.log('I');
-      } else if (diff <= 13) {
-        setBraSize('J');
-        console.log('J');
       } else if (diff <= 14) {
         setBraSize('J');
       } else if (diff > 14) {
@@ -299,10 +299,10 @@ export const BraScreen = () => {
       } else if (KorSizes <= 8) {
         setBraSize('H');
       } else if (KorSizes <= 9) {
-        setBraSize('H');
-      } else if (KorSizes <= 9) {
-        setBraSize('H');
-      } else if (KorSizes > 9) {
+        setBraSize('I');
+      } else if (KorSizes <= 10) {
+        setBraSize('J');
+      } else if (KorSizes > 10) {
         setCalBraSize('This Size Are Not in list');
       }
     }
@@ -387,7 +387,7 @@ export const BraScreen = () => {
                   borderColor: '#fff',
                   width: SCREENS.screenWidth * 0.95,
                   alignSelf: 'center',
-                  height:SCREENS.screenHeight*0.54
+                  height: SCREENS.screenHeight * 0.54,
                   // borderTopWidth: 1.1,
                   // borderLeftWidth: 0.9,
                   // borderRightWidth: 0.9,
@@ -415,10 +415,10 @@ export const BraScreen = () => {
       <View
         style={{
           height: SCREENS.screenHeight * 0.7,
-          justifyContent: 'center',
+          // justifyContent: 'center',
           alignItems: 'center',
           width: SCREENS.screenWidth * 1,
-          alignSelf: 'center',
+          // alignSelf: 'center',
         }}>
         <BraCom
           source={IMAGE.IMAGES.Bust}
@@ -436,7 +436,7 @@ export const BraScreen = () => {
           InputTop={10}
           InputHeight={37}
           backgroundColor={'#Fdc8E8'}
-         braComTop={10}
+          braComTop={10}
         />
         <BraCom
           source={IMAGE.IMAGES.Band}
@@ -467,6 +467,7 @@ export const BraScreen = () => {
           borderColor={'#fff'}
           color={'#FFF'}
           fontSize={20}
+          top={95}
         />
         {calBraSize !== '' && (
           <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
