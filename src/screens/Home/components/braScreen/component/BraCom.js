@@ -1,7 +1,6 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {Styles} from './Styels';
-
 import {Input} from '../../../../../commons/Input/Index';
 
 export const BraCom = ({

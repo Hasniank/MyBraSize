@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {FONTS} from '../../constants';
 
 export const Styles = ({
   width,
@@ -28,7 +27,6 @@ export const Styles = ({
       color: color,
       top: top,
       left: left,
-      // marginVertical:100
     },
     text: {
       fontSize: fontSize,

@@ -5,7 +5,7 @@ export const Styles = ({textTop, textHeight, textWidth, braComTop} = {}) =>
   StyleSheet.create({
     container: {
       flexDirection: 'row',
-      // justifyContent: 'space-evenly',
+      
       width: SCREENS.screenWidth * 1,
       marginTop: braComTop,
       marginLeft:30

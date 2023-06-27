@@ -1,7 +1,6 @@
-import {Text, TouchableOpacity, ImageBackground, View} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {styles} from './Styles';
-import {IMAGE} from '../../assets';
 
 export const Header = ({
   title,
@@ -14,7 +13,7 @@ export const Header = ({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={styles({width, marginTop, height}).container} >
+      style={styles({width, marginTop, height}).container}>
       <Text style={styles().selectRegionText}>{title}</Text>
       <Text style={styles().regionText}>{Subtitle}</Text>
     </TouchableOpacity>

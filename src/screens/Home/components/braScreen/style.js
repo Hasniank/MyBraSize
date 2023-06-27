@@ -55,7 +55,6 @@ export const Styles = () =>
       borderRadius: 25,
       backgroundColor: '#E4A8CC',
       elevation: 10,
-      // borderWidth: 1,
       borderColor: 'red',
     },
 

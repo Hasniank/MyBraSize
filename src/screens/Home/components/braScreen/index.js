@@ -4,7 +4,6 @@ import {
   ImageBackground,
   TouchableOpacity,
   Image,
-  Dimensions,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {IMAGE} from '../../../../assets';
@@ -16,7 +15,6 @@ import {BraCom} from './component/BraCom';
 import {Header} from '../../../../commons/Header';
 import {Button} from '../../../../commons/Buttons';
 import {SCREENS} from '../../../../constants';
-import SafeAreaView from 'react-native-safe-area-view';
 
 export const BraScreen = () => {
   const [region, setRegion] = useState('UK');
@@ -355,7 +353,6 @@ export const BraScreen = () => {
           height: SCREENS.screenHeight * 0.12,
           justifyContent: 'center',
           alignItems: 'center',
-          // backgroundColor: "yellow",
         }}>
         <Header
           title={'Select Region'}
@@ -388,14 +385,6 @@ export const BraScreen = () => {
                   width: SCREENS.screenWidth * 0.95,
                   alignSelf: 'center',
                   height: SCREENS.screenHeight * 0.54,
-                  // borderTopWidth: 1.1,
-                  // borderLeftWidth: 0.9,
-                  // borderRightWidth: 0.9,
-                  // borderBottomWidth: 1,
-                  // borderRightColor: '#FCBDE3',
-                  // borderTopColor: '#FCBDE3',
-                  // borderBottomColor: '#DAA8DB',
-                  // borderLeftColor: '#FCBDE3',
                 }}>
                 <Text style={Styles().selectRegion}>Select Region</Text>
                 <TouchableOpacity
@@ -477,7 +466,6 @@ export const BraScreen = () => {
         style={{
           height: SCREENS.screenHeight * 0.18,
           width: SCREENS.screenWidth * 1,
-          // backgroundColor:'red'
         }}>
         <View style={{flexDirection: 'row', top: 60}}>
           <View>

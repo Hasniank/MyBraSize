@@ -1,15 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {FONTS} from '../../constants';
 
 export const styles = ({width, height} = {}) =>
   StyleSheet.create({
     container: {
       height: height,
       width: width,
-      // borderTopWidth: 1.1,
-      // borderLeftWidth: 0.9,
-      // borderRightWidth: 0.9,
-      // borderBottomWidth: 1,
       borderRadius: 8,
       borderTopColor: '#fff',
       borderLeftColor: '#FCA3D8',
@@ -25,8 +20,7 @@ export const styles = ({width, height} = {}) =>
       shadowOpacity: 0.9,
       shadowRadius: 9,
       elevation: 10,
-      overflow:'hidden',
-      
+      overflow: 'hidden',
     },
     selectRegionText: {
       fontSize: 20,
