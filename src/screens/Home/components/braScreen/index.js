@@ -456,7 +456,7 @@ export const BraScreen = () => {
           borderColor={'#fff'}
           color={'#FFF'}
           fontSize={20}
-          top={95}
+          top={'17%'}
         />
         {calBraSize !== '' && (
           <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
