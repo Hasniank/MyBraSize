@@ -404,10 +404,8 @@ export const BraScreen = () => {
       <View
         style={{
           height: SCREENS.screenHeight * 0.7,
-          // justifyContent: 'center',
           alignItems: 'center',
           width: SCREENS.screenWidth * 1,
-          // alignSelf: 'center',
         }}>
         <BraCom
           source={IMAGE.IMAGES.Bust}
@@ -456,7 +454,7 @@ export const BraScreen = () => {
           borderColor={'#fff'}
           color={'#FFF'}
           fontSize={20}
-          top={'17%'}
+          top={'20%'}
         />
         {calBraSize !== '' && (
           <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
