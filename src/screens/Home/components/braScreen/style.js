@@ -69,7 +69,7 @@ export const Styles = () =>
       color: '#FFFFFF',
       fontSize: 20,
       fontFamily: 'Salsa-Regular',
-      top: 95,
+      top: SCREENS.marginHeight*0.14,
     },
     thirdContainer: {
       flexDirection: 'row',

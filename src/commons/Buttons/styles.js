@@ -27,6 +27,7 @@ export const Styles = ({
       color: color,
       top: top,
       left: left,
+      
     },
     text: {
       fontSize: fontSize,

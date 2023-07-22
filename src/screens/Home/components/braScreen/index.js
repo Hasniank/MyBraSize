@@ -15,7 +15,7 @@ import {BraCom} from './component/BraCom';
 import {Header} from '../../../../commons/Header';
 import {Button} from '../../../../commons/Buttons';
 import {SCREENS} from '../../../../constants';
-
+import {Dimensions} from 'react-native';
 export const BraScreen = () => {
   const [region, setRegion] = useState('UK');
   const [isModalVisible, setModalVisible] = useState(false);
@@ -26,7 +26,7 @@ export const BraScreen = () => {
   const [bandError, setBandError] = useState('');
   const [selectedOption, setSelectedOption] = useState('UK');
   const [calBraSize, setCalBraSize] = useState('');
-
+  const marginHeight = Dimensions.get('screen').height;
   const options = [
     'ESP/FR/PR',
     'EUR/GEP/JAP',
@@ -454,7 +454,7 @@ export const BraScreen = () => {
           borderColor={'#fff'}
           color={'#FFF'}
           fontSize={20}
-          top={'20%'}
+          top={SCREENS.marginHeight * 0.13}
         />
         {calBraSize !== '' && (
           <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
