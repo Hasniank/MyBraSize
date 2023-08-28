@@ -1,12 +1,13 @@
 import {Dimensions} from 'react-native';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
-const topHeight = Dimensions.get('screen').height;
-
+const width = Dimensions.get('screen').width;
+const height = Dimensions.get('screen').height;
+const fontScale = Dimensions.get('screen').fontScale;
 
 export const SCREENS = {
   screenWidth: width,
   screenHeight: height,
-  marginHeight:topHeight
+  fontScale: fontScale,
+  // marginHeight:topHeight,
+  // leftWidth:leftWidth
 };

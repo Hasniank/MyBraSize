@@ -14,6 +14,7 @@ export const Input = ({
   height,
   top,
   left,
+  onSubmitEditing,
 }) => {
   return (
     <TextInput
@@ -27,7 +28,7 @@ export const Input = ({
       cursorColor={'#fff'}
       multiline={false}
       keyboardAppearance="default"
-      
+      onSubmitEditing={onSubmitEditing}
       style={
         Styles({
           width,

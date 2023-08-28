@@ -6,14 +6,9 @@ export const Styles = () =>
     container: {
       width: SCREENS.screenWidth * 1,
       height: SCREENS.screenHeight * 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
+      flex: 1,
     },
-    backgroundImage: {
-      width: SCREENS.screenWidth * 1,
-      height: SCREENS.screenHeight * 1,
-    },
+    backgroundImage: {resizeMode: 'cover', justifyContent: 'center'},
     header: {
       justifyContent: 'center',
       alignItems: 'center',
@@ -69,7 +64,12 @@ export const Styles = () =>
       color: '#FFFFFF',
       fontSize: 20,
       fontFamily: 'Salsa-Regular',
-      top: SCREENS.marginHeight*0.14,
+      // top: SCREENS.marginHeight*0.14,
+    },
+    ButtonView: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      top:110
     },
     thirdContainer: {
       flexDirection: 'row',

@@ -4,6 +4,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   Image,
+  Keyboard,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {IMAGE} from '../../../../assets';
@@ -27,6 +28,7 @@ export const BraScreen = () => {
   const [selectedOption, setSelectedOption] = useState('UK');
   const [calBraSize, setCalBraSize] = useState('');
   const marginHeight = Dimensions.get('screen').height;
+  const [keyboardStatus, setKeyboardStatus] = useState('');
   const options = [
     'ESP/FR/PR',
     'EUR/GEP/JAP',
@@ -89,6 +91,7 @@ export const BraScreen = () => {
     setBandSize('');
     setBustSize('');
   };
+
   const Calculate = () => {
     setBandError('');
     setBustError('');
@@ -318,12 +321,17 @@ export const BraScreen = () => {
   };
 
   const handleChangeText = inputText => {
+    setBustSize(inputText);
     if (inputText === '') {
       setBustError('please enter the value');
     } else {
       setBustError('');
     }
-    setBustSize(inputText);
+    if (inputText.includes('.')) {
+      setBustError(true);
+    } else {
+      setBustError(false);
+    }
   };
 
   const handleChangeText1 = inputText => {
@@ -331,6 +339,11 @@ export const BraScreen = () => {
       setBandError('please enter the value');
     } else {
       setBandError('');
+    }
+    if (inputText.includes('.')) {
+      setBandError(true);
+    } else {
+      setBandError(false);
     }
     setBandSize(inputText);
   };
@@ -347,13 +360,137 @@ export const BraScreen = () => {
   }, [braSize]);
 
   return (
-    <ImageBackground source={IMAGE.IMAGES.BG} style={Styles().container}>
-      <View
-        style={{
-          height: SCREENS.screenHeight * 0.12,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+    // <ImageBackground source={IMAGE.IMAGES.BG} style={Styles().container}>
+    //   <View
+    //     style={{
+    //       height: SCREENS.screenHeight * 0.12,
+    //       justifyContent: 'center',
+    //       alignItems: 'center',
+    //     }}>
+    //     <Header
+    //       title={'Select Region'}
+    //       Subtitle={selectedOption}
+    //       onPress={toggleModal}
+    //       width={SCREENS.screenWidth * 0.93}
+    //       height={SCREENS.screenHeight * 0.06}
+    //     />
+    //     <Modal
+    //       isVisible={isModalVisible}
+    //       style={Styles().modal}
+    //       animationIn={'fadeIn'}
+    //       animationOut={'slideOutDown'}
+    //       backdropTransitionOutTiming={0}
+    //       useNativeDriver={false}
+    //       animationOutTiming={200}
+    //       animationInTiming={200}
+    //       useNativeDriverForBackdrop={false}
+    //       hideModalContentWhileAnimating={true}>
+    //       <BlurView blurType="light" style={Styles().BlurView}>
+    //         <View style={Styles().modalContainer}>
+    //           <View
+    //             style={{
+    //               justifyContent: 'center',
+    //               alignItems: 'center',
+    //               borderRadius: 25,
+    //               backgroundColor: '#E4A8CC',
+    //               elevation: 10,
+    //               borderColor: '#fff',
+    //               width: SCREENS.screenWidth * 0.95,
+    //               alignSelf: 'center',
+    //               height: SCREENS.screenHeight * 0.54,
+    //             }}>
+    //             <Text style={Styles().selectRegion}>Select Region</Text>
+    //             <TouchableOpacity
+    //               style={Styles().radioBtn}
+    //               onPress={toggleModal}>
+    //               <RadioButton
+    //                 options={options}
+    //                 selectedOption={selectedOption}
+    //                 onSelect={handleSelect}
+    //               />
+    //             </TouchableOpacity>
+    //           </View>
+    //         </View>
+    //       </BlurView>
+    //     </Modal>
+    //   </View>
+    //   <View
+    //     style={{
+    //       height: SCREENS.screenHeight * 0.7,
+    //       alignItems: 'center',
+    //       width: SCREENS.screenWidth * 1,
+    //     }}>
+    //     <BraCom
+    //       source={IMAGE.IMAGES.Bust}
+    //       title={'Bust Size (Inches)'}
+    //       subTitle={
+    //         'With a tape, measure around your back, under your arms and across your chest’s fullest part.'
+    //       }
+    //       onChangeText={handleChangeText}
+    //       value={bustSize}
+    //       borderWidth={1.5}
+    //       borderColor={bustError ? 'red' : '#fff'}
+    //       textWidth={SCREENS.screenWidth * 0.57}
+    //       width={SCREENS.screenWidth * 0.59}
+    //       textTop={5}
+    //       InputTop={10}
+    //       InputHeight={37}
+    //       backgroundColor={'#Fdc8E8'}
+    //       braComTop={10}
+
+    //     />
+    //     <BraCom
+    //       source={IMAGE.IMAGES.Band}
+    //       title={'Band Size (Inches)'}
+    //       subTitle={
+    //         'Wrap a tape around your rib cage under your bust. Keep it snug and level.'
+    //       }
+    //       onChangeText={handleChangeText1}
+    //       value={bandSize}
+    //       borderWidth={1.5}
+    //       borderColor={bandError ? 'red' : '#FFFFFF'}
+    //       textWidth={SCREENS.screenWidth * 0.57}
+    //       width={SCREENS.screenWidth * 0.55}
+    //       textTop={5}
+    //       InputHeight={37}
+    //       InputTop={10}
+    //       backgroundColor={'#fDC8E8'}
+    //       braComTop={25}
+    //     />
+    //     <Button
+    //       title={'Calculate'}
+    //       width={SCREENS.screenWidth * 0.29}
+    //       borderWidth={1}
+    //       height={SCREENS.screenHeight * 0.05}
+    //       borderRadius={10}
+    //       backgroundColor={'#F1baf4'}
+    //       onPress={Calculate}
+    //       borderColor={'#fff'}
+    //       color={'#FFF'}
+    //       fontSize={20}
+    //       top={SCREENS.marginHeight * 0.13}
+    //     />
+    //     {calBraSize !== '' && (
+    //       <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
+    //     )}
+    //   </View>
+    //   <View
+    //     style={{
+    //       height: SCREENS.screenHeight * 0.18,
+    //       width: SCREENS.screenWidth * 1,
+    //     }}>
+    //     <View style={{flexDirection: 'row', top: 60}}>
+    //       <View>
+    //         <Image style={Styles().LightImage} source={IMAGE.IMAGES.Light} />
+    //       </View>
+    //       <Text style={Styles().hintText}>
+    //         Hint: Odd numbers will be rounded it to the next even number
+    //       </Text>
+    //     </View>
+    //   </View>
+    // </ImageBackground>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Header
           title={'Select Region'}
           Subtitle={selectedOption}
@@ -401,12 +538,7 @@ export const BraScreen = () => {
           </BlurView>
         </Modal>
       </View>
-      <View
-        style={{
-          height: SCREENS.screenHeight * 0.7,
-          alignItems: 'center',
-          width: SCREENS.screenWidth * 1,
-        }}>
+      <View style={{flex: 1, backgroundColor: 'green'}}>
         <BraCom
           source={IMAGE.IMAGES.Bust}
           title={'Bust Size (Inches)'}
@@ -419,7 +551,7 @@ export const BraScreen = () => {
           borderColor={bustError ? 'red' : '#fff'}
           textWidth={SCREENS.screenWidth * 0.57}
           width={SCREENS.screenWidth * 0.59}
-          textTop={5}
+          //       textTop={5}
           InputTop={10}
           InputHeight={37}
           backgroundColor={'#Fdc8E8'}
@@ -460,20 +592,9 @@ export const BraScreen = () => {
           <Text style={Styles().braSize}>Your Bra Size : {calBraSize}</Text>
         )}
       </View>
-      <View
-        style={{
-          height: SCREENS.screenHeight * 0.18,
-          width: SCREENS.screenWidth * 1,
-        }}>
-        <View style={{flexDirection: 'row', top: 60}}>
-          <View>
-            <Image style={Styles().LightImage} source={IMAGE.IMAGES.Light} />
-          </View>
-          <Text style={Styles().hintText}>
-            Hint: Odd numbers will be rounded it to the next even number
-          </Text>
-        </View>
+      <View style={{flex: 1, backgroundColor: 'yellow'}}>
+        <Text>1</Text>
       </View>
-    </ImageBackground>
+    </View>
   );
 };

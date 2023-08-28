@@ -21,6 +21,7 @@ export const BraCom = ({
   InputLeft,
   InputHeight,
   braComTop,
+  onSubmitEditing
 }) => {
   return (
     <View style={Styles({braComTop}).container}>
@@ -46,6 +47,7 @@ export const BraCom = ({
           top={InputTop}
           left={InputLeft}
           height={InputHeight}
+          onSubmitEditing={onSubmitEditing}
         />
       </View>
       <View></View>
